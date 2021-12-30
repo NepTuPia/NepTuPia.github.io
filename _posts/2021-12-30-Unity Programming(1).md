@@ -4,6 +4,6 @@ Unity 시작하기
 
 시작해보자!
 
-![레트로의 유니티 게임 프로그래밍 에센스](./neptupia.github.io/images/unitybook.jpg "레트로의 유니티 게임 프로그래밍 에센스")
+![레트로의 유니티 게임 프로그래밍 에센스](./images/unitybook.jpg "레트로의 유니티 게임 프로그래밍 에센스")
 
 
