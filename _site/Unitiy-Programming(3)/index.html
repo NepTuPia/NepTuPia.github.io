@@ -1,0 +1,650 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Unitiy programming(3) - Footprints</title>
+<meta name="description" content="2. 상속과 컴포넌트">
+
+
+  <meta name="author" content="Kim Namsub">
+  
+  <meta property="article:author" content="Kim Namsub">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Footprints">
+<meta property="og:title" content="Unitiy programming(3)">
+<meta property="og:url" content="http://localhost:4000/Unitiy-Programming(3)/">
+
+
+  <meta property="og:description" content="2. 상속과 컴포넌트">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-01-31T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Unitiy-Programming(3)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Kim Namsub",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Footprints Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Footprints
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Kim Namsub</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Music, Outworks, Drinks and <strong>Develpment</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="sub64886488@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Unitiy programming(3)">
+    <meta itemprop="description" content="2. 상속과 컴포넌트">
+    <meta itemprop="datePublished" content="2022-01-31T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/Unitiy-Programming(3)/" class="u-url" itemprop="url">Unitiy programming(3)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h1 id="2-상속과-컴포넌트">2. 상속과 컴포넌트</h1>
+
+<p>유니티는 기본적인 객체지향(OOP)의 특성인 상속과 게임 오브젝트 구성을 위해 상속보다 더 효과적인 컴포넌트 패턴이라는 것을 지원한다.</p>
+
+<hr />
+<h3 id="상속">상속</h3>
+<p>일반적인 객체지향에서의 상속과 동일하다. 부모클래스의 메소드와 필드를 자식개체가 물려받아 활용할 수 있다.</p>
+
+<p>다만 Human 클래스를 만들어 이를 바탕으로 다양한 NPC를 만들고 몬스터 오브젝트를 만들려고 하면 인간 종족이 아닌 슬라임, 늑대인간 등 Human 클래스의 활용도가 현저히 떨어지는 상황이 게임을 개발하는 상황에서는 자주 발생한다.</p>
+
+<p>Human 클래스에서 인간에 맞춰 움직임과 그 그래픽, 상호작용을 구성해놨는데 이를 슬라임 등 다른 오브젝트에 사용하려고 하면 모두 다 메소드 오버로딩 등 재정의하거나 변경해야 하기에 그 효율이 떨어지는 것이다.</p>
+
+<p>즉, 상속만으로 게임개발을 하면<br />
+<strong>1. 오히려 코드의 재사용을 하기 힘든 경우가 발생</strong> - 위의 경우 Slime, Warewolf 클래스 등 여러 클래스를 개별적으로 만들어줘야 함<br />
+<strong>2. 기획자가 새로운 오브젝트를 만들려면 프로그래머에게 의존해야 함</strong> - 코드 수준에서만 부모 클래스를 확장하거나 자식 클래스에서 오버로딩 등을 할 수 있기에 다른 팀원이 접근하기 어려움<br /></p>
+
+<p>이런 문제를 해결하기 위해 유니티는 ‘컴포넌트 패턴’을 활용한 개발을 지원한다.</p>
+
+<hr />
+<h3 id="컴포넌트-패턴">컴포넌트 패턴</h3>
+<p>게임 엔진에서 ‘오브젝트’는 게임 세상에 존재하는 하나의 물체이다. 유니티에서는 이 오브젝트를 ‘컴포넌트’를 사용해 만든다.</p>
+
+<p><strong>Component (or Composition) 패턴</strong> - 미리 만들어진 부품을 조립하여 물건을 만드는 것 처럼 이미 만들어진 컴포넌트들을 조합해 오브젝트를 만들어 나가는 방법</p>
+
+<p>기획자가 처음부터 게임에 등장할 모든 동물을 예상할 수 없기에 개발자는 공통적으로 쓰일 개별적인 컴포넌트를 만들어 둔다. 예를들어 팔, 다리, 아가미, 입, 코, 지느러미, 잠자기, 움직이기, 날개, 식사 등 독자적으로 쓰일 수 있는 것들을 만들어 둔다.</p>
+
+<hr />
+<h1 id="게임-오브젝트와-컴포넌트의-특징">게임 오브젝트와 컴포넌트의 특징</h1>
+<p><strong>1. 유연한 재사용이 가능</strong><br />
+<strong>2. 기획자의 프로그래머에 대한 의존성 감소</strong><br />
+<strong>3. 뛰어난 독립성 덕분에 기능 추가와 삭제가 용이</strong></p>
+
+<p><strong>3-1. 게임 오브젝트는 단순한 껍데기</strong> - 게임 오브젝트는 몇 가지의 식별기능과 어떠한 컴포넌트가 자신을 구성하고 있는지를 제외하고는 별다른 기능이 없음</p>
+
+<p><strong>3-2. 컴포넌트는 개별적으로 작동하는 독립 부품임</strong> - 컴포넌트는 다른 컴포넌트와 상관이 없음. 각 컴포넌트는 스스로 이미 완성되어 있기 때문에 한 오브젝트에서 컴포넌트를 추가 및 삭제해도 서로 충돌을 일으키거나 망가지지 않음</p>
+
+<hr />
+<h1 id="컴포넌트-추가-및-삭제">컴포넌트 추가 및 삭제</h1>
+
+<p align="center">
+<img width="1113" alt="image" src="https://user-images.githubusercontent.com/68016394/151705862-d8baa08e-2389-4847-b0aa-6974fe5f5fbb.png" />
+Cube 오브젝트와 이를 구성하는 컴포넌트들
+</p>
+
+<p>위의 그림에서 Cube같은 오브젝트를 클릭하면 옆의 Inspector창에 선택한 오브젝트를 구성하는 컴포넌트들을 관리할 수 있다.</p>
+
+<p>예를들어 Box collider 컴포넌트를 삭제하면 박스의 물리적 표면이 사라져 다른 물체와 충돌하지 않는다. 그리고 Rigidbody를 추가해 해당 오브젝트가 중력의 영향을 받도록 만들었다. 이 상태에서 Box collider 컴포넌트를 삭제하면 물리적 표면은 없지만 중력의 영향은 받기에 영원히 아래로 떨어지게 된다.</p>
+
+<p>즉 위에서 살펴보았던 것 처럼 컴포넌트 끼리의 독립성이 유지되는 것이다.</p>
+
+<hr />
+<h1 id="메시지와-브로드캐스팅">메시지와 브로드캐스팅</h1>
+
+<h2 id="monobehaviour">MonoBehaviour</h2>
+<p>유니티의 모든 컴포넌트는 MonoBehaviour이라는 클래스를 상속받는다. 이 클래스는 유니티에서 미리 만들어 제공하는 클래스이며 컴포넌트에 필요한 필수적이고 기본적인 기능을 제공한다. 이를 상속한 컴포넌트만이 게임 오브젝트의 컴포넌트로서 사용될 수 있는 것이다. (파이썬의 self같은 느낌…?)</p>
+
+<p>그리고 이렇게 MonoBehaviour을 상속받은 컴포넌트는 유니티의 제어를 받게 되기에 유니티에서 보내는 메시지를 들을 수 있게 된다.</p>
+
+<h2 id="broadcasting">Broadcasting</h2>
+<p>유니티가 메시지를 보내면 컴포넌트들은 해당 메시지에서 호출된 메서드를 실행한다. 유니티는 메시지를 보낼 때 누가 받을지 상관하지 않으며 마찬가지로 컴포넌트들도 누가 보낸 메시지인지 신경쓰지 않는다. 그저 메시지에 적힌 메서드를 내가 가지고 있다면 실행하고 없다면 무시할 뿐이다.</p>
+
+<p>dance()라는 메서드를 실행하라는 메시지를 유니티가 컴포넌트들에게 방송하면 해당 메서드를 가지고 있는 컴포넌트들은 이에 반응하여 해당 메서드를 실행하고 그렇지 않는 컴포넌트들은 이를 무시한다.</p>
+
+<h2 id="유니티-이벤트-메서드">유니티 이벤트 메서드</h2>
+<p>위의 내용은 앞으로 많이 사용할 Start(), Update(), OnTriggerEnter()와 같은 ‘유니티 이벤트 메서드’가 동작하는 원리다. (이는 Unity programming(4)에서 다룰 예정)</p>
+
+<p>예를 들어 Start() 메서드는 오브젝트가 처음 활성화 될 때 자동으로 한번 실행되는데 이는 유니티가 Start라고 적힌 메서드를 자동으로 브로드캐스팅하기에 사용자가 명시적으로 호출할 필요가 없는 것이다.</p>
+
+<p>유니티에서는 이런 식으로 이름 철자만 똑같이 구현해두면 메시지와 브로드캐스팅에 의해 자동으로 실행되는 메서드들이 존재하고 이를 ‘유니티 이벤트 함수’ 혹은 ‘유니티 이벤트 메서드’라고 한다.</p>
+
+<hr />
+<h1 id="요약">요약</h1>
+<p><strong>1. 게임 오브젝트는 컴포넌트를 담는 단순한 빈 껍데기</strong></p>
+
+<p><strong>2. 빈 게임 오브젝트에 컴포넌트를 붙여 기능을 추가한다</strong></p>
+
+<p><strong>3. 컴포넌트는 기능을 가진 부품으로 오브젝트에 이식되어 조립된다</strong></p>
+
+<p><strong>4. 각 컴포넌트는 서로 독립적으로 작동한다</strong></p>
+
+<p><strong>5. 유니티의 모든 컴포넌트는 MonoBehaviour을 상속받아 만들어진다</strong></p>
+
+<p><strong>6. 메시지를 받은 컴포넌트는 메시지에 표시된 메서드를 가지고 있으면 실행한다</strong></p>
+
+<p><strong>7. 브로드캐스팅은 메시지를 무차별적으로 모든 컴포넌트에게 뿌리는 행위이다</strong></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-01-31T00:00:00+09:00">January 31, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Unitiy+programming%283%29%20http%3A%2F%2Flocalhost%3A4000%2FUnitiy-Programming%283%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUnitiy-Programming%283%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUnitiy-Programming%283%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C-%EA%B0%9C%EC%9A%94-%EC%A0%95%EB%A6%AC%EA%B8%80/" class="pagination--pager" title="게임 개발 개요 정리글
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C-%EA%B0%9C%EC%9A%94-%EC%A0%95%EB%A6%AC%EA%B8%80/" rel="permalink">게임 개발 개요 정리글
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">1. 게임 기술 정리글
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/first-post/" rel="permalink">First post
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Hello
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Unity-Programming(2)/" rel="permalink">Unity programming(2)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">1. 유니티 인터페이스
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Unity-Programming(1)/" rel="permalink">Unity programming(1)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Unity 시작하기
+본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Kim Namsub. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

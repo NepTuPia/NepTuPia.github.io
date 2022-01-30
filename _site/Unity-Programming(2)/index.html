@@ -1,0 +1,746 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Unity programming(2) - Footprints</title>
+<meta name="description" content="1. 유니티 인터페이스">
+
+
+  <meta name="author" content="Kim Namsub">
+  
+  <meta property="article:author" content="Kim Namsub">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Footprints">
+<meta property="og:title" content="Unity programming(2)">
+<meta property="og:url" content="http://localhost:4000/Unity-Programming(2)/">
+
+
+  <meta property="og:description" content="1. 유니티 인터페이스">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-12-30T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Unity-Programming(2)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Kim Namsub",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Footprints Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Footprints
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Kim Namsub</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Music, Outworks, Drinks and <strong>Develpment</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="sub64886488@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Unity programming(2)">
+    <meta itemprop="description" content="1. 유니티 인터페이스">
+    <meta itemprop="datePublished" content="2021-12-30T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/Unity-Programming(2)/" class="u-url" itemprop="url">Unity programming(2)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          2 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h1 id="1-유니티-인터페이스">1. 유니티 인터페이스</h1>
+
+<p>기본적인 유니티 인터페이스 설정을 해보고 살펴보자</p>
+
+<hr />
+<h3 id="초기화면-셋팅">초기화면 셋팅</h3>
+<p>유니티 프로젝트를 열면 다음과 같은 모습이다.</p>
+
+<p align="center">
+<img width="1167" alt="스크린샷 2021-12-30 오후 3 34 33" src="https://user-images.githubusercontent.com/68016394/147740459-ca72cfaf-5c8a-43d0-8346-1217deb1004b.png" />
+초기화면
+</p>
+
+<p>이제 우측 상단의 ‘Default’라고 되어 있는 부분을 클릭해서 ‘2 by 3’로 바꿔주고
+‘Project’ 탭을 ‘Hierarchy’ 탭 아래부분으로 이동하자.</p>
+
+<p>그리고 상단 맥북 메뉴에서 Windows &gt; General &gt; Console을 눌러 콘솔창을 띄운 뒤
+‘Inspector’ 탭 아래에 넣어주어 기본적인 레이아웃 세팅을 완료하자.</p>
+
+<p align="center">
+<img width="1174" alt="image" src="https://user-images.githubusercontent.com/68016394/147740630-123620ec-1511-4288-8a0d-58c5ae7cedf9.png" />
+완료된 모습
+</p>
+
+<p>위의 화면은 유니티에서 가장 많이 사용되는 메인 창 6개이며 좌측 위 사진부터 시계방향으로 다음과 같이 부른다.</p>
+
+<p><strong>1. Scene</strong>: 게임 월드인 씬을 시각적으로 편집하는 창</p>
+
+<p><strong>2. Hierarchy</strong>: 씬에 존재하는 모든 게임 오브젝트가 나열</p>
+
+<p><strong>3. Inspector</strong>: 선택한 오브젝트의 정보가 표시</p>
+
+<p><strong>4. Console</strong>: 로그나 에러가 표시</p>
+
+<p><strong>5. Project</strong>: 프로젝트에 사용될 asset들이 표시
+(asset: 개발에 사용되는 모든 형태의 파일)</p>
+
+<p><strong>6. Game</strong>: 플레이어가 실제로 보게 될 화면</p>
+
+<hr />
+
+<h3 id="console-창-설명">console 창 설명</h3>
+
+<p>아무래도 실제로 개발하다보면 디버깅이 가장 중요하기에 따로 정리해본다</p>
+
+<p align="center">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/68016394/147742237-3be108a4-7ebc-4264-963b-e372e73db4fd.png" />
+console창 출력 설정 탭
+</p>
+
+<p><strong>1. Clear</strong>: 모든 로그 삭제, 미해결 로그는 제외</p>
+
+<p><strong>2. Clear on Play</strong>: 씬을 플레이하기 전까지의 로그 삭제</p>
+
+<p><strong>3. Clear on Build</strong>: 빌드 직전까지의 로그 삭제</p>
+
+<p><strong>4. Collapes</strong>: 같은 종류의 로그끼리 보기 쉽게 묶음</p>
+
+<p><strong>5. Error Pause</strong>: 플레이 도중 에러 발생시 씬 일시 정지</p>
+
+<p><strong>6. Editor</strong>: 유니티 에디터 외부의 기기에서 로그를 받아옴</p>
+
+<hr />
+<h3 id="툴바와-씬-편집">툴바와 씬 편집</h3>
+
+<h4 id="1-툴바">1) 툴바</h4>
+
+<p>유니티 에디터 창의 좌측 상단에 툴바 메뉴들이 있다</p>
+
+<p align="center">
+<img width="225" alt="image" src="https://user-images.githubusercontent.com/68016394/147742860-042b81e4-4235-4d99-89fe-59b56d5de04f.png" />
+<br />
+툴바 메뉴
+</p>
+
+<p>좌측부터</p>
+
+<p><strong>1. Hand</strong>: 씬 카메라 이동</p>
+
+<p><strong>2. Translate</strong>: 오브젝트 이동</p>
+
+<p><strong>3. Rotate</strong>: 오브젝트 회전</p>
+
+<p><strong>4. Scale</strong>: 오브젝트 크기 조정</p>
+
+<p><strong>5. Rect</strong>: UI 및 2D 오브젝트 크기 조정</p>
+
+<p><strong>6. Transform</strong>: 평행이동, 회전, 스케일 툴을 하나로 합친 툴</p>
+
+<p><strong>7. Custom editor</strong>: 복잡한 개인 맞춤 툴 사용 가능</p>
+
+<p>커스텀을 제외한 6개의 툴은 <em>qwerty</em>로 단축키 사용 가능!</p>
+
+<h4 id="2-씬-편집">2) 씬 편집</h4>
+
+<p>-마우스 휠 스크롤로 줌아웃/줌인 가능</p>
+
+<p>-Hand 툴로 카메라 이동 가능<br />
+*마우스 휠버튼 클릭으로 바로 Hand 툴 사용 가능</p>
+
+<p>-Flythrough 모드: 씬 창에서 마우스 우클릭을 누르고 있으면 작동, WASD로 움직일 수 있음</p>
+
+<p>-Orbit 모드: 씬 창에서 Alt+마우스 좌클릭으로 작동, 씬 중심에 있는 물체를 기준으로 마우스 공전 가능</p>
+
+<h4 id="3-오브젝트-편집">3) 오브젝트 편집</h4>
+
+<p><strong>-Translate(평행이동)</strong>: Translate 툴로 오브젝트를 원하는 방향으로 이동 가능</p>
+
+<p><img width="735" alt="image" src="https://user-images.githubusercontent.com/68016394/147748404-17aa6527-65ab-4254-9d75-a8b80cac6b61.png" />
+위 그림에서 가운데 빨간색, 파란색, 초록색을 눌러 X축, Z축, Y축을 고정하고 이동시킬 수 있다.</p>
+
+<p><strong>-Rotate(회전)</strong>: Rotate 툴로 오브젝트를 회전시킬 수 있다.</p>
+
+<p><img width="736" alt="image" src="https://user-images.githubusercontent.com/68016394/147748885-cb603342-ca13-4af8-9eea-f49003a4bba6.png" />
+위 그림에서 가운데 빨간색, 파란색, 초록색을 눌러 X축, Z축, Y축을 기준으로 회전시킬 수 있다.</p>
+
+<p><strong>-Scale(크기)</strong>: Scale 툴로 오브젝트의 크기 배율을 설정할 수 있다.</p>
+
+<p><img width="738" alt="image" src="https://user-images.githubusercontent.com/68016394/147748561-941fbc42-af9d-4af5-b04d-61aa0247f261.png" />
+위 그림에서 가운데 빨간색, 파란색, 초록색을 눌러 X축, Z축, Y축을 고정하고 방향으로 크기를 변형할 수 있다. 가운데 회색 큐브를 클릭하면 세 축을 동시에 변경할 수 있다.</p>
+
+<p><strong>-Rect(직사각형)</strong>: Rect 툴로 물체의 가로와 세로를 2D 직사각형으로 편집할 수 있다.</p>
+
+<p><img width="733" alt="image" src="https://user-images.githubusercontent.com/68016394/147748698-a6aef35c-4f7a-4176-96d7-27ee1e2fcec1.png" />
+Z축 방향을 무시하고 크기가 조정된다. UI나 2D오브젝트 편집에 주로 사용된다.</p>
+
+<p><strong>-Transform(변형)</strong>: Transform 툴로 Translate, Rotate, Scale을 동시에 편집할 수 있다.</p>
+
+<p><img width="735" alt="image" src="https://user-images.githubusercontent.com/68016394/147748835-0d985fb5-fe5a-4600-af7e-300bab6285ff.png" />
+사용방법은 동일하다.</p>
+
+<hr />
+<h3 id="기즈모gizmo">기즈모(Gizmo)</h3>
+<p>플레이어에겐 보이지 않고 개발자의 화면에서만 보이는 것들을 기즈모(Gizmo)라고 한다.</p>
+
+<h4 id="씬-기즈모scene-gizmo">씬 기즈모(Scene gizmo)</h4>
+<p>씬의 좌측 상단에 있는 것을 ‘씬 기즈모’ 라고 한다.</p>
+
+<p align="center">
+<img width="150" alt="image" src="https://user-images.githubusercontent.com/68016394/147749224-8d711514-8247-4bbd-a7ba-65e4ce853da5.png" />
+<br />
+씬 기즈모(Scene gizmo)
+</p>
+
+<p>각 색깔의 원뿔 암(arm)을 클릭하면 각 축의 시점으로 변환할 수 있다.
+<br /></p>
+
+<p>가운데 투명 큐브를 클릭하면 ‘투영 전환’을 할 수 있다. 원근(Perspective) 모드와 등각(Isometric) 모드로 전환할 수 있다.</p>
+
+<p align="center">
+<img width="735" alt="image" src="https://user-images.githubusercontent.com/68016394/147749461-6976842b-8cb6-4f7c-ac3b-3533b6277f3a.png" />
+<br />
+원근 모드
+</p>
+
+<p align="center">
+<img width="736" alt="image" src="https://user-images.githubusercontent.com/68016394/147749400-6f36ca19-d1c7-4c21-bb80-be9928ac82ec.png" />
+<br />
+등각 모드
+</p>
+
+<hr />
+<h3 id="씬-플레이-버튼">씬 플레이 버튼</h3>
+
+<p align="center">
+<img width="106" alt="image" src="https://user-images.githubusercontent.com/68016394/147749574-0f1b7f09-78e4-494f-a15b-04351c95d5bb.png" />
+<br />
+씬 플레이 버튼
+</p>
+
+<p>왼쪽부터</p>
+
+<p><strong>1. Play</strong>: 현재 씬을 플레이하거나 종료</p>
+
+<p><strong>2. Pause</strong>: 현제 플레이중인 씬을 일시정지</p>
+
+<p><strong>3. Step</strong>: 한 프레임만큼 씬 플레이</p>
+
+<h1 id="플레이-중-변경된-사항은-플레이-종료시-모두-삭제된다-반드시-플레이를-종료한-후-편집하자"><em>플레이 중 변경된 사항은 플레이 종료시 모두 삭제된다. 반드시 플레이를 종료한 후 편집하자…!</em></h1>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-30T00:00:00+09:00">December 30, 2021</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Unity+programming%282%29%20http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%282%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%282%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%282%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/Unity-Programming(1)/" class="pagination--pager" title="Unity programming(1)
+">Previous</a>
+    
+    
+      <a href="/first-post/" class="pagination--pager" title="First post
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Unitiy-Programming(3)/" rel="permalink">Unitiy programming(3)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">2. 상속과 컴포넌트
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/%EA%B2%8C%EC%9E%84-%EA%B0%9C%EB%B0%9C-%EA%B0%9C%EC%9A%94-%EC%A0%95%EB%A6%AC%EA%B8%80/" rel="permalink">게임 개발 개요 정리글
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">1. 게임 기술 정리글
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/first-post/" rel="permalink">First post
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Hello
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Unity-Programming(1)/" rel="permalink">Unity programming(1)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Unity 시작하기
+본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Kim Namsub. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
