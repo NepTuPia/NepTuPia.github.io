@@ -6,10 +6,7 @@
 ### 초기화면 셋팅
 유니티 프로젝트를 열면 다음과 같은 모습이다.
 
-<p align = "center">
-<img width="1167" alt="스크린샷 2021-12-30 오후 3 34 33" src="https://user-images.githubusercontent.com/68016394/147740459-ca72cfaf-5c8a-43d0-8346-1217deb1004b.png"/>
-초기화면
-</p>
+ㄹ
 
 이제 우측 상단의 'Default'라고 되어 있는 부분을 클릭해서 '2 by 3'로 바꿔주고
 'Project' 탭을 'Hierarchy' 탭 아래부분으로 이동하자.
