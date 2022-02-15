@@ -1,4 +1,370 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-07T00:55:30+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Footprints</title><subtitle>My milestones are here</subtitle><author><name>Kim Namsub</name></author><entry><title type="html">Unity programming(4)</title><link href="http://localhost:4000/Unity-Programming(4)/" rel="alternate" type="text/html" title="Unity programming(4)" /><published>2022-02-06T00:00:00+09:00</published><updated>2022-02-06T00:00:00+09:00</updated><id>http://localhost:4000/Unity%20Programming(4)</id><content type="html" xml:base="http://localhost:4000/Unity-Programming(4)/">&lt;h1 id=&quot;5-게임-오브젝트-제어하기&quot;&gt;5. 게임 오브젝트 제어하기&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2022-02-12T21:28:40+09:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Footprints</title><subtitle>My milestones are here</subtitle><author><name>Kim Namsub</name></author><entry><title type="html">Unity programming(6)</title><link href="http://localhost:4000/Unity-Programming(6)/" rel="alternate" type="text/html" title="Unity programming(6)" /><published>2022-02-12T00:00:00+09:00</published><updated>2022-02-12T00:00:00+09:00</updated><id>http://localhost:4000/Unity%20Programming(6)</id><content type="html" xml:base="http://localhost:4000/Unity-Programming(6)/">&lt;h1 id=&quot;탄막-슈팅-게임-닷지---플레이어-제작2&quot;&gt;탄막 슈팅 게임 ‘닷지’ - 플레이어 제작(2)&lt;/h1&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;플레이어-제작&quot;&gt;플레이어 제작&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;플레이어 사망 처리&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 플레이어 사망 처리를 할 Die() 메서드를 만들어보자.&lt;/p&gt;
+
+&lt;p&gt;Die() 메서드는 자신의 게임 오브젝트를 비활정화하는 메서드이다. 이 메서드는 탄알과 플레이어가 충돌했을 때 실행될것이다.&lt;/p&gt;
+
+&lt;p&gt;Die() 메서드는 PlayerController 스크립트가 스스로 실행하지 않는다. 플레이어에게 부딪힌 탄알이 Player Coltroller 스크립트에 접근하여 실행시킬것이며 그러므로 Die() 메서드는 public으로 접근제한자를 설정해 외부에서 접근 가능하도록 구현한다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;public void Die(){
+    //자신의 게임 오브젝트 비활성화
+    gameObject.SetActive(false);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;gameObject는 MonoBehaviour 클래스에서 제공하는 게임 오브젝트 자기 자신을 가리키는 ‘변수’이다. 모든 컴포넌트는 gameObject 변수를 사용해 자신을 사용하고 있는 오브젝트(자신, 즉 컴포넌트의 게임 오브젝트)에 접근할 수 있다. PlayerColtroller 스크립트는 Player 오브젝트에 추가할 것이므로 gameObject 변수는 Player 오브젝트를 가리키게 되어 비활성화 처리를 할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;GameObject와 gameObject를 혼동하면 안되는데, GameObject는 타입이고 gameObject는 변수이다. 즉,&lt;/p&gt;
+
+&lt;p&gt;`
+GameObject gameObject;
+`&lt;/p&gt;
+
+&lt;p&gt;인 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;SetActive() 메서드&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;모든 게임 오브젝트는 스스로를 끄고 켜는 기능을 가지고 있다. 오브젝트의 Inspector 창에서 게임 오브젝트 이름 왼쪽에 보이는 체크 박스가 게임 오브젝트를 활성화/비활성화 하는 버튼이다.&lt;/p&gt;
+
+&lt;p&gt;SetActive() 메서드는 GameObject 타입, 즉 클래스에 내장되어 있는 메서드로서 해당 게임 오브젝트의 활성/비활성화를 담당한다.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;600&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153695310-fdb06492-b4e3-4f06-8457-2b1bf89b70a9.png&quot; /&gt;
+활성/비활성화 하는 체크 박스
+&lt;/p&gt;
+
+&lt;p&gt;위의 체크박스는 SetActive() 메서드를 활용해 원격으로 이용할 수 있다. 위의 Die() 메서드는 체크박스를 해제해 비활성화 상태로 만든 것이며 SetActive(True)를 통해 다시 활성화시킬 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;PlayerController 컴포넌트 설정하기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;완성한 PlayerController 스크립트를 Player 게임 오브젝트에 컴포넌트로 추가하고 실행해보자.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;600&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153698454-7103f08f-3347-4a44-a2d5-6032e5f55acf.png&quot; /&gt;
+스크립트 파일을 컴포넌트로 추가
+&lt;/p&gt;
+
+&lt;p&gt;위의 그림처럼 PlayerController 스크립트를 컴포넌트로 추가한 뒤 Player Rigid Body를 Player 오브젝트가 가지고 있던 리지드바디 컴포넌트로 할당해주자.&lt;/p&gt;
+
+&lt;p&gt;이 상태에서 씬을 플레이하면 상하좌우에 맞춰 캡슐형태의 플레이어가 움직이는 것을 확인할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;playercontroller-스크립트-개선하기&quot;&gt;PlayerController 스크립트 개선하기&lt;/h2&gt;
+
+&lt;p&gt;이렇게 완성한 PlayerController 스크립트는 몇가지 문제점이 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;조작이 게임에 즉시 반영되지 않는다. &lt;br /&gt; AddForce()로 힘을 주는 방식으로 움직임을 구현했기에 즉각적으로 움직이지 않고 가속도가 붙는 방식으로 움직이게 되어 조작감이 답답해진다.&lt;/li&gt;
+  &lt;li&gt;입력 감지 코드가 복잡하다. &lt;br /&gt; 4개의 if문을 활용한 방식을 좀 더 간결하게 개선해야 할 필요가 있다.&lt;/li&gt;
+  &lt;li&gt;playerRigidbody에 컴포넌트를 드래그&amp;amp;드롭으로 할당하는 것이 불편하다. &lt;br /&gt; 바로 앞에서 PlayerController 스크립트를 컴포넌트로 넣은 후 Player Rigid Body에 리지드바디 컴포넌트를 직접 손으로 할당했다. 이는 귀찮고 번거로우며 잘못된 컴포넌트를 할당할 위험도 있으므로 이를 코드로 처리할 필요가 있다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;위의 문제점들을 하나씩 개선시켜 나가보자!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Start() 메서드 수정&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;3번 문제 해결을 위해 Start() 메서드를 활용해 게임이 시작될 때 playerRigidBody에 리지드바디 컴포넌트의 참조를 할당하도록 수정하자.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;private Rigidbody playerRigidBody; //이동에 사용할 리지드바디 컴포넌트
+
+void Start()
+{
+    //게임 오브젝트에서 Rigidbody 컴포넌트를 찾아 playerRigidbody에 할당
+    playerRigidBody = GetComponent&amp;lt;Rigidbody&amp;gt;();
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;우선 playerRigidBody 변수의 접근제한자를 private로 접근해 외부에서 변경할 수 없도록 설정했다. 즉 Start() 메서드를 통해서만 변경 가능하도록 해 잘못된 컴포넌트를 할당할 위험을 제거했다.&lt;/p&gt;
+
+&lt;p&gt;public이 아닌 변수는 Inspector창에서 확인할 수 없기때문에 이제 드래그&amp;amp;드롭 방식이나 드랍다운메뉴에서 선택하는 방식으로 컴포넌트를 할당할 수 없다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;*GetComponent() 메서드&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;GetComponent() 메서드는 원하는 타입의 컴포넌트를 자신(스크립트)의 게임 오브젝트에서 찾아오는 메서드이다. 즉 자신(스크립트)를 컴포넌트로 가지고 있는 게임 오브젝트의 다른 컴포넌트를 찾아주는 메서드이다.&lt;/p&gt;
+
+&lt;p&gt;GetComponent()가 해당하는 컴포넌트를 찾지 못하면 null값을 반환하며, &lt;Rigidbody&gt;는 제네릭을 사용해 GetConponent() 메서드가 다양한 타입의 컴포넌트에 작동할 수 있도록 한다.&lt;/Rigidbody&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;조작감 개선하기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 1번째 문제였던 조작감 개선을 해보자. Update() 메서드를 수정해 이동속도 변화가 즉각 반영되도록 설정하자. 수정된 코드는 다음 기능들을 한다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;수평축과 수직축의 입력값을 감지&lt;/li&gt;
+  &lt;li&gt;속도를 나타낼 새로운 Vector3 생성&lt;/li&gt;
+  &lt;li&gt;리지드바디 컴포넌트의 속도 설정&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void Update()
+{
+    //수평축과 수직축의 입력값을 감지하여 저장
+    float xInput = Input.GetAxis(&quot;Horizontal&quot;);
+    float zInput = Input.GetAxis(&quot;Vertical&quot;);
+    
+    //실제 이동 속도를 입력과 이동 속력을 사용해 결정
+    float xSpeed = xInput * speed;
+    float zSpeed = zInput * speed;
+
+    //Vector3 속도를 (xSpeed, 0, zSpeed)로 설정
+    Vector3 newVelocity = new Vector3(xSpeed, 0f, zSpeed);
+
+    //리지드바디의 속도에 newVelocity 할당
+    playerRigidbody.velocity = newVelocity;
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Input.GetAxis() 메서드는 어떤 축에 대한 입력값을 숫자로 반환하는 메서드이다.&lt;/p&gt;
+
+&lt;p&gt;`
+Input.GetAxis(String axisName);
+`&lt;/p&gt;
+
+&lt;p&gt;코드에 쓰인 “Horizontal” 축과 “Vertical” 축에 매핑(Mapping)된 키의 입력이 감지되면 해당 입력이 축에 대해 양의 방향이면 1.0, 음의 방향이면 -1.0, 없으면 0.0을 반환하게 된다.&lt;/p&gt;
+
+&lt;p&gt;이렇게 반환된 값에 speed = 8.0f를 곱해 현재의 속도를 구하고 이를 velocity3 타입의 값으로 설정해 플레이어 오브젝트의 현재 속도를 즉각적으로 변경한다.&lt;/p&gt;
+
+&lt;p&gt;즉, Addforce() 메서드는 관성을 이용하는 메서드이다, 계속해서 힘을 가해 속도를 서서히 증가시키는 연속함수의 특징을 지닌다면 velocity 값을 변경하는 것은 이전 속도를 지우고 새로운 속도를 설정하는 구간함수의 특성을 지니는 것이다.&lt;/p&gt;
+
+&lt;p&gt;이제 씬을 저장하고 게임을 플레이해보면 훨씬 개선된 조작감으로 플레이어 오브젝트를 조종할 수 있게 된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;입력-매니저&quot;&gt;입력 매니저&lt;/h2&gt;
+
+&lt;p&gt;Input.GetAxis() 메서드로 Input.GetKey() 메서드를 대체했었다. 이는 다음과 같은 의의가 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;입력기 커스터마이제이션을 구현(흔히 말하는 컨트롤러 키 매핑-Mapping)&lt;/li&gt;
+  &lt;li&gt;조이스틱같은 다양한 입력장치에 대응하기 위해&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Kim Namsub</name></author><summary type="html">탄막 슈팅 게임 ‘닷지’ - 플레이어 제작(2)</summary></entry><entry><title type="html">Unity programming(5)</title><link href="http://localhost:4000/Unity-Programming(5)/" rel="alternate" type="text/html" title="Unity programming(5)" /><published>2022-02-09T00:00:00+09:00</published><updated>2022-02-09T00:00:00+09:00</updated><id>http://localhost:4000/Unity%20Programming(5)</id><content type="html" xml:base="http://localhost:4000/Unity-Programming(5)/">&lt;h1 id=&quot;탄막-슈팅-게임-닷지---플레이어-제작&quot;&gt;탄막 슈팅 게임 ‘닷지’ - 플레이어 제작&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;레벨--및-카메라-설정&quot;&gt;레벨  및 카메라 설정&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;1. 바닥 제작&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hierarchy &amp;gt; Create &amp;gt; 3D object &amp;gt; Plane으로 기본이 될 바닥을 만들자
+Inspector창에서 Transform 컴포넌트의 Position에서 평면의 위치를 조정할 수 있다. 기본 원점인 (0, 0, 0)으로 셋팅해두자.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;900&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153201009-628af2b9-cb66-498b-9ff4-5971b3eb274f.png&quot; /&gt;
+평면 생성 및 원점에 셋팅
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. 가로와 세로길이를 두 배 늘리기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Inspector 창의 Transform 컴포넌트의 스케일을 (2, 1, 2)로 변경&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;600&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153201165-b22e0e1b-6264-48a5-85a5-06e3d8641f5a.png&quot; /&gt;
+Transform 컴포넌트와 셋팅값 조절
+&lt;/p&gt;
+
+&lt;p&gt;Unity에서 Plane의 가로 세로는 1당 10unit이다. 또한 1 Unit은 Cube 한번의 길이와 동일하다. 즉 1 길이의 Plane엔 10개의 Cube를 나열할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;그리고 1unit을 현실의 몇 m와 대응시킬지는 개발자 마음이나 보통 1unit = 1m로 셋팅한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3. 머티리얼(Material)&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Unity에서 게임 오브젝트의 컬러는 머티리얼이 결정한다. 머티리얼은 셰이더 + 텍스처가 합쳐진 asset으로 오브젝트 픽셀의 컬러를 결정한다.&lt;/p&gt;
+
+&lt;p&gt;Assets &amp;gt; Create &amp;gt; Material로 머티리얼 에셋을 만들자.&lt;/p&gt;
+
+&lt;p&gt;이렇게 생선한 머티리얼의 Inspector창을 보자&lt;/p&gt;
+
+&lt;p&gt;‘Albedo’는 반사율을 결정한다. 색상은 빛을 반사해서 우리눈에 들어오므로 Albedo가 결국 해당 게임 오브젝트의 색상을 결정하는 요소이다.&lt;/p&gt;
+
+&lt;p&gt;생성한 머티리얼의 Albedo를 검정색으로 적용한 후  적용할 게임 오브젝트에 Drag &amp;amp; Drop으로 넣어 적용시켜보자.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;1166&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153202436-30dec31f-7ea3-4f45-bfc6-1fa1cc1e5e74.png&quot; /&gt;
+머티리얼 제작 및 Plane에 적용
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4. 벽 제작&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 바닥 위에 벽을 만들어보자.&lt;/p&gt;
+
+&lt;p&gt;Hierarchy &amp;gt; Create(+) &amp;gt; 3D object &amp;gt; Cube로 큐브를 생성하면 Scale이 (1, 1, 1)의 큐브가 생성된다. Scale을 (10, 1, 1)로 설정해 쭉 늘어진 기둥을 만든 뒤 Position 값을 조절해 바닥의 양 모서리에 위치시키자. 한번 만든 Cube 오브젝트는 복사 - 붙여넣기로 간편하게 복제할 수 있다 .&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;1167&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153203608-a3a26a51-fe8e-4d34-8280-2effa087c262.png&quot; /&gt;
+벽 제작
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5. 레벨로 오브젝트 관리&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이렇게 만들고나니 Hierarchy 창이 좀 복잡하다. 보기 간편하게 정리해보자.&lt;/p&gt;
+
+&lt;p&gt;Hierarchy &amp;gt; Create &amp;gt; Empty Object로 빈 오브젝트를 만든 뒤 만들었던 Plane과 Wall들을 생성한 빈 오브젝트에 Drag &amp;amp; Drop으로 자식으로 만들어주자.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;600&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153204100-577cb5cf-226a-4aaa-99cf-ad359d659c59.png&quot; /&gt;
+깔끔해진 Hierarchy 창
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;6. 카메라 설정&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 플레이시에 보일 화면을 설정해보자.&lt;/p&gt;
+
+&lt;p&gt;Hierarchy창에 있는 Main Camera 오브젝트를 눌러 Inspector창을 설정하자.&lt;/p&gt;
+
+&lt;p&gt;Position값을 (0, 15, -10), Rotation값을 (60, 0, 0)으로 설정하면 한눈에 화면이 눈에 들어오게 카메라 뷰를 세팅할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;배경색도 어색하므로 Inspector &amp;gt; Camera &amp;gt; Clear Flags의 값을 Solid Color로 바꿔 단색으로 설정해주자.&lt;/p&gt;
+
+&lt;p&gt;이렇게 기본적인 게임의 틀인 씬의 레벨과 카메라 설정을 완료했다.&lt;/p&gt;
+
+&lt;h2 id=&quot;플레이어-제작&quot;&gt;플레이어 제작&lt;/h2&gt;
+
+&lt;p&gt;이제 스크립트를 이용해 조작할 수 있는 게임 오브젝트인 플레이어를 만들어보자.&lt;/p&gt;
+
+&lt;p&gt;이 게임에서 플레이어는 다음과 같은 동작을 한다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;파란색 캡슐 모양이다.&lt;/li&gt;
+  &lt;li&gt;상하좌우 혹은 WASD키로 움직인다.&lt;/li&gt;
+  &lt;li&gt;탄알에 맞으면 죽는다.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;플레이어 게임 오브젝트 만들기&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hierarchy &amp;gt; Create &amp;gt; 3D Object &amp;gt; Capsule로 캡슐형태의 오브젝트를 만들고 이름을 “Player”로 설정하자. 머티리얼을 통해 파란색으로 플레이어 오브젝트 색깔을 설정해주자.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;1673&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153624920-200afa88-d0ee-4cb8-b008-78628b56db7f.png&quot; /&gt;
+플레이어 오브젝트 생성
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;태그 설정&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;나중에 탄알을 만들 때 탄알 입장에서 충돌한 게임 오브젝트가 플레이어인지 아닌지 확인하기 위해 “태그(Tag)”를 사용한다.&lt;/p&gt;
+
+&lt;p&gt;태그는 게임 오브젝트를 분류하고, 코드상으로 오브젝트끼리 구별할 때 사용한다.&lt;/p&gt;
+
+&lt;p&gt;생성한 “Player”오브젝트의 Inspector창 &amp;gt; Tag 드롭다운메뉴 &amp;gt; Player 선택&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;600&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153625697-62948f51-cf5e-49f1-a43d-58c19d8c1cf2.png&quot; /&gt;
+플레이어 오브젝트의 태그를 &quot;Player&quot;로 설정
+&lt;/p&gt;
+
+&lt;p&gt;이렇게 설정하면 나중에 총알 오브젝트가 다른 오브젝트와 충돌할 때 “Player”의 태그인 오브젝트를 구별할 수 있어 게임오버를 판별할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;리지드바디 컴포넌트 설정&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 플레이어가 움직이거나 총알과 부딪히는 등 물리적인 법칙에 지배받게 하기 위해 리지드바디 컴포넌트를 플레이어 오브젝트에 추가해보자.&lt;/p&gt;
+
+&lt;p&gt;플레이어 오브젝트의 Inspector창 &amp;gt; Add Component &amp;gt; Physics &amp;gt; Rigidbody로 리지드바디 컴포넌트를 플레이어 게임 오브젝트에 추가해보자&lt;/p&gt;
+
+&lt;p&gt;이상태 그대로 두면 플레이어는 캡슐모양이기에 이리저리 굴러다니게 된다.
+리지드바디의 제약(Constraints)옵션을 사용해 어떤 축의 위치나 회전이 변경되지 않게 설정할 수 있다.&lt;/p&gt;
+
+&lt;p&gt;플레이어 오브젝트의 Inspector창 &amp;gt; Rigidbody 컴포넌트 창 &amp;gt; Constraints &amp;gt; Freeze Position의 Y 체크, Freeze Rotation의 X, Z 체크&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;
+&lt;img width=&quot;1342&quot; alt=&quot;image&quot; src=&quot;https://user-images.githubusercontent.com/68016394/153692792-f10f664d-7696-4b62-b2a0-1230ba2c2e57.png&quot; /&gt;
+리지드바디 컴포넌트 추가 및 제약 설정
+&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;플레이어 스크립트 생성&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 플레이어를 조종하기 위한 스크립트 파일을 만들어야 한다. 플레이어 스크립트는 다음과 같은 기능을 가진다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;사용자의 키보드 입력 감지&lt;/li&gt;
+  &lt;li&gt;리지드 바디를 사용하여 Player 게임 오브젝트 움직이기&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;PlayerColtroller 스크립트 파일을 만들어 위의 기능을 구현해보자.&lt;/p&gt;
+
+&lt;p&gt;게임오브젝트의 이동을 구현할 때 물리적인 힘들 가하는 방식을 사용할 것이다. 따라서 PlayerController 스크립트에 Player 게임 오브젝트에 추가된 리지드바디 컴포넌트를 변수로 가져와 사용해야 한다. 리지드바디 컴포넌트를 할당할 변수와 이동 속력을 지정할 변수를 선언해보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{   
+    public Rigidbody playerRigidBody; //이동에 사용할 리지드바디 컴포넌트
+    public float speed = 8f; //이동 속력 
+
+    void Start()
+    {
+        
+    }
+
+
+    void Update()
+    {
+        
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;나중에 이 playerRigidbody 변수를 통해 Rigidbody 컴포넌트를 지닌 오브젝트를 가리켜서 조종할 수 있다. 즉 playerRigidbody 변수에 Player 오브젝트의 리지드바디 컴포넌트를 지정해 사용할 것이다.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;사용자 입력 감지&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 입력을 감지하는 기능을 만들자. 입력을 감지하려면 Update() 메서드와 Input 클래스의 입력 감지 메서드를 활용할 것이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Update() 메서드 &lt;br /&gt; 게임속의 모든 정보는 실시간으로 변한다. 인공지능 적이 플레이어를 추적하는 등의 작업에서 이렇게 실시간으로 변한느 정보를 계속해서 모니터링 하는 작업이 필요하다. 대부분 게임은 주기적으로 이러한 갱신 처리를 진행하며 보통 화면이 새로 그려지는 주기인 프레임(Frame)에 맞춰 실행된다. &lt;br /&gt; Update() 메서드는 Start() 메서드처럼 특정 시점에 자동으로 실행되는 유니티 이벤트 메서드이며 매 프레임마다 실행되는 메서드이다. 만약 60FPS라면 1초마다 60번 update() 메서드가 실행되는 것이다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Input 클래스 &lt;br /&gt; 유니티 Input 클래스는 사용자의 입력을 감지하는 메서드를 모아둔 집합이다. Input의 입력감지 메서드는 실행 시점에 어떤 키를 눌렀는지 알려준다. &lt;br /&gt; Update() 메서드는 1초에 수십 번씩 실행되므로 Update()메서드에 입력 감지 메서드를 사용하면 매우 짧은 간격으로 입력을 받을 수 있고 게임 유저는 실시간으로 입력을 받아들인다고 인식할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;update()메서드를 다음과 같이 바꾸자&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;void Update()
+{
+    if (Input.GetKey(KeyCode.UpArror) == ture){
+        //위쪽 방향키 입력이 감지된 경우 z 방향 힘 주기
+        playerRigidBody.AddForce(0f, 0f, speed);
+    }
+    if (Input.GetKey(KeyCode.DownArror) == ture){
+        //아래쪽 방향키 입력이 감지된 경우 -z 방향 힘 주기
+        playerRigidBody.AddForce(0f, 0f, -speed);
+    }
+    if (Input.GetKey(KeyCode.RightArror) == ture){
+        //오른쪽 방향키 입력이 감지된 경우 x방향 힘 주기
+        playerRigidBody.AddForce(Speed, 0f, 0f);
+    }
+    if (Input.GetKey(KeyCode.LeftArror) == ture){
+        //왼쪽 방향키 입력이 감지된 경우 -x방향 힘 주기
+        playerRigidBody.AddForce(-speed, 0f, 0f);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;위의 코드는 상하좌우 방향키의 입력을 감지하고 게임 오브젝트에 힘을 가해 해당 방향으로 이동시킨다.&lt;/p&gt;
+
+&lt;p&gt;Input.GetKey() 메서드는 키보드의 식별자를 KeyCode 타입의 변수로 입력받는다.&lt;/p&gt;
+
+&lt;p&gt;`
+bool Input.GetKey(KeyCode key);
+`&lt;/p&gt;
+
+&lt;p&gt;위의 메서드가 실행될 때 해당 키를 누르고 있으면 True, 아니면 False를 반환한다. 
+4종류의 키를 감지하는 4개의 Input.GetKey() 메서드가 1초에 수십번씩 실행되고 있으므로 실시간으로 입력을 감지할 수 있는 것이다.&lt;/p&gt;
+
+&lt;p&gt;이 외에도&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Input.GetKeyDown() // 해당 키를 누르는 '순간' true, 나머지는 false
+Input.GetKeyUp() // 해당 키를 누르다가 손을 떼는 '순간' true, 나머지는 false
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;의 메서드들도 있다. 위의 2개의 메서드들은 Input.GetKey() 메서드와 달리 ‘누르고 있는 동안’은 false를 반환한다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;내용이-길어지므로-다음-글에서-player-게임-오브젝트의-설정을-마무리하겠다&quot;&gt;내용이 길어지므로 다음 글에서 Player 게임 오브젝트의 설정을 마무리하겠다.&lt;/h3&gt;</content><author><name>Kim Namsub</name></author><summary type="html">탄막 슈팅 게임 ‘닷지’ - 플레이어 제작</summary></entry><entry><title type="html">Unity programming(4)</title><link href="http://localhost:4000/Unity-Programming(4)/" rel="alternate" type="text/html" title="Unity programming(4)" /><published>2022-02-06T00:00:00+09:00</published><updated>2022-02-06T00:00:00+09:00</updated><id>http://localhost:4000/Unity%20Programming(4)</id><content type="html" xml:base="http://localhost:4000/Unity-Programming(4)/">&lt;h1 id=&quot;5-게임-오브젝트-제어하기&quot;&gt;5. 게임 오브젝트 제어하기&lt;/h1&gt;
 
 &lt;p&gt;객체지향을 이용해 클래스와 오브젝트(객체)를 다뤄보자&lt;/p&gt;
 
@@ -201,12 +567,7 @@ Cube 오브젝트와 이를 구성하는 컴포넌트들
 
 &lt;hr /&gt;
 
-&lt;p&gt;https://www.itfind.or.kr/WZIN/jugidong/1192/119206.htm&lt;/p&gt;</content><author><name>Kim Namsub</name></author><summary type="html">1. 게임 기술 정리글</summary></entry><entry><title type="html">Unity programming(1)</title><link href="http://localhost:4000/Unity-Programming(1)/" rel="alternate" type="text/html" title="Unity programming(1)" /><published>2021-12-30T00:00:00+09:00</published><updated>2021-12-30T00:00:00+09:00</updated><id>http://localhost:4000/Unity%20Programming(1)</id><content type="html" xml:base="http://localhost:4000/Unity-Programming(1)/">&lt;h2 id=&quot;unity-시작하기&quot;&gt;Unity 시작하기&lt;/h2&gt;
-&lt;p&gt;본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정&lt;/p&gt;
-
-&lt;p&gt;시작해보자!&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/68016394/147726564-2b883a83-a39e-41c0-a579-121ff5781403.jpg&quot; alt=&quot;unitybook&quot; /&gt;&lt;/p&gt;</content><author><name>Kim Namsub</name></author><summary type="html">Unity 시작하기 본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정</summary></entry><entry><title type="html">Unity programming(2)</title><link href="http://localhost:4000/Unity-Programming(2)/" rel="alternate" type="text/html" title="Unity programming(2)" /><published>2021-12-30T00:00:00+09:00</published><updated>2021-12-30T00:00:00+09:00</updated><id>http://localhost:4000/Unity%20Programming(2)</id><content type="html" xml:base="http://localhost:4000/Unity-Programming(2)/">&lt;h1 id=&quot;1-유니티-인터페이스&quot;&gt;1. 유니티 인터페이스&lt;/h1&gt;
+&lt;p&gt;https://www.itfind.or.kr/WZIN/jugidong/1192/119206.htm&lt;/p&gt;</content><author><name>Kim Namsub</name></author><summary type="html">1. 게임 기술 정리글</summary></entry><entry><title type="html">Unity programming(2)</title><link href="http://localhost:4000/Unity-Programming(2)/" rel="alternate" type="text/html" title="Unity programming(2)" /><published>2021-12-30T00:00:00+09:00</published><updated>2021-12-30T00:00:00+09:00</updated><id>http://localhost:4000/Unity%20Programming(2)</id><content type="html" xml:base="http://localhost:4000/Unity-Programming(2)/">&lt;h1 id=&quot;1-유니티-인터페이스&quot;&gt;1. 유니티 인터페이스&lt;/h1&gt;
 
 &lt;p&gt;기본적인 유니티 인터페이스 설정을 해보고 살펴보자&lt;/p&gt;
 
@@ -381,7 +742,12 @@ Z축 방향을 무시하고 크기가 조정된다. UI나 2D오브젝트 편집�
 
 &lt;p&gt;&lt;strong&gt;3. Step&lt;/strong&gt;: 한 프레임만큼 씬 플레이&lt;/p&gt;
 
-&lt;h1 id=&quot;플레이-중-변경된-사항은-플레이-종료시-모두-삭제된다-반드시-플레이를-종료한-후-편집하자&quot;&gt;&lt;em&gt;플레이 중 변경된 사항은 플레이 종료시 모두 삭제된다. 반드시 플레이를 종료한 후 편집하자…!&lt;/em&gt;&lt;/h1&gt;</content><author><name>Kim Namsub</name></author><summary type="html">1. 유니티 인터페이스</summary></entry><entry><title type="html">First post</title><link href="http://localhost:4000/first-post/" rel="alternate" type="text/html" title="First post" /><published>2021-12-30T00:00:00+09:00</published><updated>2021-12-30T00:00:00+09:00</updated><id>http://localhost:4000/first%20post</id><content type="html" xml:base="http://localhost:4000/first-post/">&lt;p&gt;&lt;strong&gt;Hello&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&quot;플레이-중-변경된-사항은-플레이-종료시-모두-삭제된다-반드시-플레이를-종료한-후-편집하자&quot;&gt;&lt;em&gt;플레이 중 변경된 사항은 플레이 종료시 모두 삭제된다. 반드시 플레이를 종료한 후 편집하자…!&lt;/em&gt;&lt;/h1&gt;</content><author><name>Kim Namsub</name></author><summary type="html">1. 유니티 인터페이스</summary></entry><entry><title type="html">Unity programming(1)</title><link href="http://localhost:4000/Unity-Programming(1)/" rel="alternate" type="text/html" title="Unity programming(1)" /><published>2021-12-30T00:00:00+09:00</published><updated>2021-12-30T00:00:00+09:00</updated><id>http://localhost:4000/Unity%20Programming(1)</id><content type="html" xml:base="http://localhost:4000/Unity-Programming(1)/">&lt;h2 id=&quot;unity-시작하기&quot;&gt;Unity 시작하기&lt;/h2&gt;
+&lt;p&gt;본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정&lt;/p&gt;
+
+&lt;p&gt;시작해보자!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/68016394/147726564-2b883a83-a39e-41c0-a579-121ff5781403.jpg&quot; alt=&quot;unitybook&quot; /&gt;&lt;/p&gt;</content><author><name>Kim Namsub</name></author><summary type="html">Unity 시작하기 본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정</summary></entry><entry><title type="html">First post</title><link href="http://localhost:4000/first-post/" rel="alternate" type="text/html" title="First post" /><published>2021-12-30T00:00:00+09:00</published><updated>2021-12-30T00:00:00+09:00</updated><id>http://localhost:4000/first%20post</id><content type="html" xml:base="http://localhost:4000/first-post/">&lt;p&gt;&lt;strong&gt;Hello&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;It’s my first post&lt;/p&gt;
 

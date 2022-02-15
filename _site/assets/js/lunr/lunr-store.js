@@ -34,4 +34,16 @@ var store = [{
         "tags": [],
         "url": "/Unity-Programming(4)/",
         "teaser": null
+      },{
+        "title": "Unity programming(5)",
+        "excerpt":"탄막 슈팅 게임 ‘닷지’ - 플레이어 제작 레벨 및 카메라 설정 1. 바닥 제작 Hierarchy &gt; Create &gt; 3D object &gt; Plane으로 기본이 될 바닥을 만들자 Inspector창에서 Transform 컴포넌트의 Position에서 평면의 위치를 조정할 수 있다. 기본 원점인 (0, 0, 0)으로 셋팅해두자. 평면 생성 및 원점에 셋팅 2. 가로와 세로길이를 두...","categories": [],
+        "tags": [],
+        "url": "/Unity-Programming(5)/",
+        "teaser": null
+      },{
+        "title": "Unity programming(6)",
+        "excerpt":"탄막 슈팅 게임 ‘닷지’ - 플레이어 제작(2) 플레이어 제작 플레이어 사망 처리 이제 플레이어 사망 처리를 할 Die() 메서드를 만들어보자. Die() 메서드는 자신의 게임 오브젝트를 비활정화하는 메서드이다. 이 메서드는 탄알과 플레이어가 충돌했을 때 실행될것이다. Die() 메서드는 PlayerController 스크립트가 스스로 실행하지 않는다. 플레이어에게 부딪힌 탄알이 Player Coltroller 스크립트에 접근하여 실행시킬것이며 그러므로...","categories": [],
+        "tags": [],
+        "url": "/Unity-Programming(6)/",
+        "teaser": null
       }]
