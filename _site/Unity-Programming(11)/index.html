@@ -9,8 +9,8 @@
   <head>
     <meta charset="utf-8">
 
-<!-- begin _includes/seo.html --><title>Unity programming(1) - Footprints</title>
-<meta name="description" content="Unity 시작하기 본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정">
+<!-- begin _includes/seo.html --><title>Unity programming(11) - Footprints</title>
+<meta name="description" content="9장, 10장을 들어가기 전…">
 
 
   <meta name="author" content="Kim Namsub">
@@ -22,30 +22,30 @@
 <meta property="og:type" content="article">
 <meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="Footprints">
-<meta property="og:title" content="Unity programming(1)">
-<meta property="og:url" content="http://localhost:4000/Unity-Programming(1)/">
+<meta property="og:title" content="Unity programming(11)">
+<meta property="og:url" content="http://localhost:4000/Unity-Programming(11)/">
 
 
-  <meta property="og:description" content="Unity 시작하기 본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정">
-
-
-
-
-
-
-
-  <meta property="article:published_time" content="2021-12-30T00:00:00+09:00">
+  <meta property="og:description" content="9장, 10장을 들어가기 전…">
 
 
 
 
 
-  
+
+
+  <meta property="article:published_time" content="2022-02-24T00:00:00+09:00">
+
+
+
+
 
   
 
+  
 
-<link rel="canonical" href="http://localhost:4000/Unity-Programming(1)/">
+
+<link rel="canonical" href="http://localhost:4000/Unity-Programming(11)/">
 
 
 
@@ -253,16 +253,16 @@
 
 
   <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
-    <meta itemprop="headline" content="Unity programming(1)">
-    <meta itemprop="description" content="Unity 시작하기본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정">
-    <meta itemprop="datePublished" content="2021-12-30T00:00:00+09:00">
+    <meta itemprop="headline" content="Unity programming(11)">
+    <meta itemprop="description" content="9장, 10장을 들어가기 전…">
+    <meta itemprop="datePublished" content="2022-02-24T00:00:00+09:00">
     
 
     <div class="page__inner-wrap">
       
         <header>
           <h1 id="page-title" class="page__title p-name" itemprop="headline">
-            <a href="http://localhost:4000/Unity-Programming(1)/" class="u-url" itemprop="url">Unity programming(1)
+            <a href="http://localhost:4000/Unity-Programming(11)/" class="u-url" itemprop="url">Unity programming(11)
 </a>
           </h1>
           
@@ -291,13 +291,22 @@
 
       <section class="page__content e-content" itemprop="text">
         
-        <h2 id="unity-시작하기">Unity 시작하기</h2>
-<p>본 글은 “레트로의 유니티 게임 프로그래밍 에센스”를 따라가며 작성될 예정</p>
+        <h1 id="9장-10장을-들어가기-전">9장, 10장을 들어가기 전…</h1>
 
-<p>시작해보자!</p>
+<hr />
 
-<p><img src="https://user-images.githubusercontent.com/68016394/147726564-2b883a83-a39e-41c0-a579-121ff5781403.jpg" alt="unitybook" /></p>
+<p>게임 월드에서 모든 오브젝트는 위치와 회전을 가진다. 그리고 ‘공간’은 오브젝트들을 담는 틀이면서, 오브젝트를 배치할 때 사용하는 위치와 회전을 측정하는 기준을 제공한다.</p>
 
+<p>어떤 오브젝트의 위치와 회전을 측정하는 기준은 상황에 따라 다르게 적용된다. ‘절대적인 원점’에서의 위치와 회전일 수도 있고 오브젝트끼리의 ‘상대적인’ 위치와 회전일 수도 있다.</p>
+
+<p>그리고 공간에서 이동하는 오브젝트는 속력과 방향, 즉 벡터를 가진다. 이 또한 절대적인 원점을 기준으로 정할 수도 있고 오브젝트와 비교해 정할 수도 있다.</p>
+
+<p>이렇듯 위치와 회전, 방향, 속력 등을 측정하는 기준은 상황에 따라 변하므로 어떤 기준을 제공하는 어떤 공간을 사용할지 결정해야 한다. 그리고 그것을 수학적으로 어떻게 코드로 표현할지도 배우고 고민해야 한다.</p>
+
+<p>9장과 10장에서는 이에 대한 내용을 배워 게임 월드 내에서 게임 오브젝트를 원하는 위치에 배치하고, 의도한 방향으로 움직이기 위해 방향, 위치, 회전, 속력, 움직임, 공간과 관련된 기초적인 수학 및 코딩 지식을 배울 것이다.</p>
+
+<p><strong>9장: 방향, 크기, 회전을 담당하는 벡터 수학과 쿼터니언</strong><br />
+<strong>10장: 9장에서 배운 수학을 응용하여 유니티에서 움직임 표현 및 좌표계의 종류</strong></p>
 
         
       </section>
@@ -309,7 +318,7 @@
 
         
 
-  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2021-12-30T00:00:00+09:00">December 30, 2021</time></p>
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-24T00:00:00+09:00">February 24, 2022</time></p>
 
       </footer>
 
@@ -318,21 +327,22 @@
     <h4 class="page__share-title">Share on</h4>
   
 
-  <a href="https://twitter.com/intent/tweet?text=Unity+programming%281%29%20http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%281%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+  <a href="https://twitter.com/intent/tweet?text=Unity+programming%2811%29%20http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%2811%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
 
-  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%281%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%2811%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
 
-  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%281%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%2811%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
 </section>
 
 
       
   <nav class="pagination">
     
-      <a href="#" class="pagination--pager disabled">Previous</a>
+      <a href="/Unity-Programming(10)/" class="pagination--pager" title="Unity programming(10)
+">Previous</a>
     
     
-      <a href="/Unity-Programming(2)/" class="pagination--pager" title="Unity programming(2)
+      <a href="/Unity-Programming(12)/" class="pagination--pager" title="Unity programming(12)
 ">Next</a>
     
   </nav>
@@ -383,46 +393,6 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">벡터
-</p>
-  </article>
-</div>
-
-        
-          
-
-
-
-<div class="grid__item">
-  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
-    
-    <h2 class="archive__item-title no_toc" itemprop="headline">
-      
-        <a href="/Unity-Programming(11)/" rel="permalink">Unity programming(11)
-</a>
-      
-    </h2>
-    
-
-  <p class="page__meta">
-    
-
-    
-
-    
-      
-      
-
-      <span class="page__meta-readtime">
-        <i class="far fa-clock" aria-hidden="true"></i>
-        
-          less than 1 minute read
-        
-      </span>
-    
-  </p>
-
-
-    <p class="archive__item-excerpt" itemprop="description">9장, 10장을 들어가기 전…
 </p>
   </article>
 </div>
@@ -503,6 +473,46 @@
 
 
     <p class="archive__item-excerpt" itemprop="description">탄막 슈팅 게임’닷지’ - 최종 완성
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Unity-Programming(8)/" rel="permalink">Unity programming(8)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">탄막 슈팅 게임 ‘닷지’ - 탄알 제작
 </p>
   </article>
 </div>

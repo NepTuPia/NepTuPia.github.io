@@ -1,0 +1,816 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Unity programming(7) - Footprints</title>
+<meta name="description" content="탄막 슈팅 게임 ‘닷지’ - 탄알 제작">
+
+
+  <meta name="author" content="Kim Namsub">
+  
+  <meta property="article:author" content="Kim Namsub">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Footprints">
+<meta property="og:title" content="Unity programming(7)">
+<meta property="og:url" content="http://localhost:4000/Unity-Programming(7)/">
+
+
+  <meta property="og:description" content="탄막 슈팅 게임 ‘닷지’ - 탄알 제작">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-02-16T00:00:00+09:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="http://localhost:4000/Unity-Programming(7)/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Kim Namsub",
+      "url": "http://localhost:4000/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Footprints Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Footprints
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person" class="h-card">
+
+  
+
+  <div class="author__content">
+    <h3 class="author__name p-name" itemprop="name">
+      <a class="u-url" rel="me" href="http://localhost:4000/" itemprop="url">Kim Namsub</a>
+    </h3>
+    
+      <div class="author__bio p-note" itemprop="description">
+        <p>Music, Outworks, Drinks and <strong>Develpment</strong></p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name" class="p-locality">Seoul, Republic of Korea</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="sub64886488@gmail.com" rel="nofollow noopener noreferrer me"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer me">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+  
+  </div>
+
+
+
+  <article class="page h-entry" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Unity programming(7)">
+    <meta itemprop="description" content="탄막 슈팅 게임 ‘닷지’ - 탄알 제작">
+    <meta itemprop="datePublished" content="2022-02-16T00:00:00+09:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title p-name" itemprop="headline">
+            <a href="http://localhost:4000/Unity-Programming(7)/" class="u-url" itemprop="url">Unity programming(7)
+</a>
+          </h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content e-content" itemprop="text">
+        
+        <h1 id="탄막-슈팅-게임-닷지---탄알-제작">탄막 슈팅 게임 ‘닷지’ - 탄알 제작</h1>
+
+<hr />
+
+<p>앞에서 레벨과 플레이어 게임 오브젝트를 만들고 조작할 수 있도록 설정을 마쳤다. 이제 탄알 게임 오브젝트를 완성하고, 탄알 생성기로 탄알을 주기적으로 생성해 플레이어와 상호작용할 수 있도록 만들자</p>
+
+<h2 id="탄알-게임-오브젝트-준비">탄알 게임 오브젝트 준비</h2>
+
+<p>게임에서 탄알은 생성된 후 앞쪽으로 일정 속도로 날아가며, 어떤 게임 오브젝트와 충돌했을 때 그 오브젝트가 플레이어라면 파괴하는 기능을 한다.</p>
+
+<p><strong>Bullet 게임 오브젝트 생성</strong></p>
+
+<ol>
+  <li>구(Sphere) 게임 오브젝트 생성(Hierarchy &gt; Create &gt; 3D object &gt; Sphere)</li>
+  <li>오브젝트의 이름을 Bullet으로 변경</li>
+  <li>오브젝트의 위치를 (0, 5, 0), 스케일을 (0.5, 0.5, 0.5)로 변경</li>
+  <li>Hierarchy 창에서 Bullet 더블클릭 &gt; Bullet 게임 오브젝트가 씬에서 포커스 됨</li>
+</ol>
+
+<p><strong>Bullet의 머티리얼 설정</strong></p>
+
+<ol>
+  <li>상단 Assets &gt; Create &gt; Material</li>
+  <li>생성된 머티리얼의 이름을 Bullet Color로 설정</li>
+  <li>Inspector 창에서 Bullet Color 머티리얼의 Albedo의 색깔을 (255, 0, 0)으로 변경</li>
+  <li>설정을 완료한 머티리얼을 Bullet 오브젝트에 드래그&amp;드랍으로 적용</li>
+</ol>
+
+<p align="center">
+<img width="1284" alt="image" src="https://user-images.githubusercontent.com/68016394/154226015-5860b393-41c9-4360-be1d-e6777504e0c9.png" />
+Bullet 오브젝트 생성 및 머티리얼 적용
+</p>
+
+<p><strong>리지드바디 컴포넌트 설정하기</strong></p>
+
+<p>탄알이 속도를 가지도록 Bullet 게임 오브젝트에 리지드바디 컴포넌트를 추가하자</p>
+
+<p>탄알은 중력의 영향을 받지 않고 앞으로만 나아가야하므로 리지드바디 컴포넌트의 ‘Use Gravity’를 체크 해제해 중력의 영향을 받지 않도록 설정하자.</p>
+
+<p align="center">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/68016394/154226102-26b57de1-534c-42f1-a22c-1441c2a0c4d0.png" />
+리지드바디 컴포넌트 적용 및 무중력 설정
+</p>
+
+<p><strong>콜라이더 설정하기</strong></p>
+
+<p>Bullet 오브젝트는 Shpere 오브젝트이므로 구 콜라이더(Sphere Colider)가 추가되어 있어 물리적인 표면이 존재한다. 따라서 콜라이더를 지닌 다른 게임 오브젝트와 충돌하게 된다.</p>
+
+<p>이제 탄알이 다른 탄알과 충돌했을 경우에는 충돌이 일어나지 않도록 설정할 것이다, 이때 트리거(Trigger)로 설정된 콜라이더를 사용한다.</p>
+
+<p><strong>트리거 콜라이더</strong></p>
+
+<p>트리거 콜라이더는 충돌을 감지하긴 하지만 실제로 접촉이 일어나는 물리적 표면은 지니고 있지 않다, 즉 충돌을 감지해 어떤 기능을 실행할지 말지 결정하는 방아쇠(Trigger)의 역할을 한다.</p>
+
+<p>예를들어 플레이어가 결승선에 통과했는지 아닌지를 판단하기 위해 트리거 콜라이더를 사용한다. 아니면 어떤 지역이나 구역에 들어서면 적을 스폰하기 위해서도 사용하는 등 굉장히 유용한 기능이다.</p>
+
+<p>Bullet 오브젝트의 Inspector 창 &gt; Sphere Collider 컴포넌트의 ‘Is Trigger’ 박스에 체크하면 트리거 콜라이더로 설정할 수 있다.</p>
+
+<p><strong>Bullet을 프리팹으로 만들기</strong></p>
+
+<p>Bullet 게임 오브젝트 구성이 완료되었으므로 탄알생성기를 만들어 탄알을 게임중 실시간으로 생성되게 만들 것이다.</p>
+
+<p>‘프리팹(Prefab)’은 언제든지 재사용할 수 있는 미리 만들어진 게임 오브젝트 asset이다. 비슷한 게임 오브젝트를 여러 개 만들 때 매번 다시 설정하는 번거로움을 줄이기 위해 프리팹을 사용한다.</p>
+
+<p>게임 오브젝트를 프리팹으로 만들어두면 나중에 간편하게 복제해 사용할 수 있다. 프리팹은 파일로 저장되기 때문에 현재 씬뿐만 아니라 얼마든지 다른 씬에서 재활용할 수 있다. (Asset 창에 C# 스크립트 파일도 표시되는것을 기억해보자!)</p>
+
+<p>특정 게임 오브젝트를 프리팹으로 만들려면 드래그&amp;드랩으로 Hierarchy창에 있던 오브젝트를 Asset창으로 끌어오자.</p>
+
+<p align="center">
+<img width="1278" alt="image" src="https://user-images.githubusercontent.com/68016394/154228378-d9768bf6-fb73-4e34-87c0-4ffe6a99e3e4.png" />
+Bullet 오브젝트를 프리팹으로 설정
+</p>
+
+<p>프리팹이 된 Bullet 오브젝트를 Hierarchy 창에서 보면 파란색으로 보이는 것을 확인할 수 있다. 프리팹으로 복제된 게임 오브젝트는 이처럼 파란색으로 표시된다.</p>
+
+<h2 id="탄알-스크립트-준비">탄알 스크립트 준비</h2>
+
+<p>이제 완성된 탄알 오브젝트가 제대로 작동하도록 스크립트를 완성해보자. C# 스크립트를 만들고 Bullet으로 이름을 변경해 준비하자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Bullet : MonoBehaviour
+{
+    public float speed = 8f; //탄알 이동 속력
+    private Rigidbody bulletRigidbody; //이동에 사용할 리지드바디 컴포넌트
+
+    void start(){
+        //게임 오브젝트에서 Rigidbody 컴포넌트를 찾아 bulletRigidbody에 할당
+        bulletRigidbody = GetComponent&lt;Rigidbody&gt;();
+        //탄알 리지드바디 컴포넌트의 속도 = 앞쪽방향 * 이동 속력으로 벡터값으로 설정
+        bulletRigidbody.velocity = transform.forward * speed;
+    }
+}
+</code></pre></div></div>
+
+<p>bulletRigidbody 변수에 GetComponent&lt;&gt;() 메서드로 리지드바디 컴포넌트를 찾아 할당한 뒤 velocity에 속도벡터를 대입해준다. Start() 메서드이므로 탄알이 생성되자마자 앞으로 일정속도로 나아가게 된다.</p>
+
+<p><strong>transform</strong></p>
+
+<p>위의 코드에서 transform이 무엇인지를 알아야 한다. Transform타입의 변수인 transform은 오브젝트의 트랜스폼 컴포넌트로 바로 접근하는 변수이다.</p>
+
+<p>C# 스크립트로 편의상 GetComponent&lt;&gt;() 메서드로 찾지 않아도 바로 transform 변수로 접근해서 사용할 수 있다.</p>
+
+<p align="center">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/68016394/154242733-50fe7ef9-80eb-4bd7-bdf6-865c8bf2224f.png" />
+transform 변수로 접근하는 오브젝트의 트랜스폼 컴포넌트
+</p>
+
+<p>transform.forward는 오브젝트의 앞쪽 방향(Z축)을 나타내는 Vector3 타입의 변수로서 앞쪽 방향을 바로 구할 수 있다.</p>
+
+<p>즉 transform.forward * speed로 방향 * 속도의 벡터값을 구할 수 있는 것이다.</p>
+
+<p><strong>탄알 자동 파괴하기</strong></p>
+
+<p>생성된 탄알이 맵 밖으로 빠져나간 후 계속 남아있다면 컴퓨터의 메모리에 어마어마한 부하가 생길것이다. 이를 해결하기 위해 생성된 후 일정시간이 지나면 파괴되도록 설정해야 한다.</p>
+
+<p>Bullet 스크립트의 Start() 메서드를 다음과 같이 수정하자.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void start(){
+    //게임 오브젝트에서 Rigidbody 컴포넌트를 찾아 bulletRigidbody에 할당
+    bulletRigidbody = GetComponent&lt;Rigidbody&gt;();
+    //탄알 리지드바디 컴포넌트의 속도 = 앞쪽방향 * 이동 속력으로 벡터값으로 설정
+    bulletRigidbody.velocity = transform.forward * speed;
+
+    //3초 뒤 자신의 게임 오브젝트 파괴
+    Destroy(gameObject, 3f);
+}
+</code></pre></div></div>
+
+<p>Destroy() 메서드는 특정 오브젝트를 파괴하는 역할을 한다.</p>
+
+<p>`
+Destroy(Object obj, float t);
+`</p>
+
+<p>위와같이 사용하며 첫번째 파라미터로 파괴할 오브젝트, 두번째 인자로 초 단위로 지연시간을 줄 수 있다. 지연시간 파라미터는 생략할 수 있고 생략하면 즉시 파괴한다.</p>
+
+<h2 id="탄알의-충돌-처리">탄알의 충돌 처리</h2>
+
+<p>이제 탄알과 플레이어가 충돌을 감지하는 기능을 만들어보자.</p>
+
+<p><strong>충돌 이벤트 메서드</strong></p>
+
+<p>유니티에서 콜라이더를 가진 게임 오브젝트 A, B가 충돌한다고 가정해보자. A, B는 자신이 충돌했는지를 스스로 파악할 수 없다. 대신 충돌하면 충돌했다는 충돌 메시지가 A, B에게 보내지게 되는데 이를 통해 자신이 다른 오브젝트와 충돌했다는 것을 파악할 수 있다.</p>
+
+<p>게임 오브젝트와 그 컴포넌트들은 충돌 종류에 따라 OnTriggerEnter 혹은 On collisionEnter 메시지를 받게 된다.</p>
+
+<p>Start() 메서드가 오브젝트가 생성되자 마자 실행되거나 Update() 메서드가 매 프레임마다 실행되는 이유가 해당 메서드의 이름이 Start, Update이기 때문인 것 처럼 충돌 시 실행할 메서드를 만드는 방법은 OnTriggerEnter, OnCollisionEnter 이름의 메서드를 만들면 된다.</p>
+
+<p>또한 충돌 메시지에 충돌한 대상의 정보도 함께 첨부된다. 그러므로 이 게임에선 탄알이 충돌한 물체가 다른 탄알인지 플레이언지 구분해 적절한 행동을 취할 수 있다.</p>
+
+<p>이처럼 충돌 메시지에 대응하는 메서드를 ‘충돌 이벤트 메서드’ 라고 한다.</p>
+
+<p><strong>OnCollision 계열 : 일반 충돌</strong></p>
+
+<p>일반적인 콜라이더를 가진 두 게임 오브젝트가 충돌할 때 발생하는 충돌 이벤트 메서드로 충돌한 두 콜라이더는 통과되지 않고 서로를 밀어낸다. 종류는 3가지가 있다.</p>
+
+<ol>
+  <li>OnCollisionEnter(Collision collision) : 충돌한 순간</li>
+  <li>OnColiisionStay(Collision collision) : 충돌하는 동안</li>
+  <li>OnCollisionExit(Collision collision) : 충돌했다가 분리되는 순간</li>
+</ol>
+
+<p>OnCollision 계열의 메서드가 실행될 때에는 충돌 관련 정보가 Collision 타입의 변수로 들어온다. Collision 타입은 충돌 정보를 담는 컨테이너이며 이를 통해 충돌한 대상 오브젝트, 충돌 지점, 충돌 표면의 방향등의 정보를 알 수 있다.</p>
+
+<p><strong>OnTrigger 계열 : 트리거 충돌</strong></p>
+
+<p>충돌한 오브젝트 중 하나라도 트리거 콜라이더를 지닌 경우 자동으로 실행되는 메서드들이다.</p>
+
+<ol>
+  <li>OnTriggerEnter(Collider other) :충돌한 순간</li>
+  <li>OnTriggerStay(Collider other) : 충돌하는 동안</li>
+  <li>OnTriggerExit(Collider other) : 충돌했다가 분리되는 순간</li>
+</ol>
+
+<p>트리거 충돌은 서로를 그대로 통과하므로 충돌 지점, 충돌 표면의 방향등의 정보는 들어오지 않고 충돌한 상대방 오브젝트가 다이렉트로 들어온다.</p>
+
+<p>또 하나 주의할 점은 트리거 콜라이더가 아닌 일반 콜라이더를 지닌 오브젝트도 트리거 콜라이더인 오브젝트와 충돌하면 OnTrigger 계열의 메서드가 실행된다는 점이다.</p>
+
+<p><strong>탄알에 충돌 감지 구현</strong></p>
+
+<p>이제 스크립트에 충돌 감지 기능을 구현해보자. 탄알은 트리거 콜라이더였으므로 OnTrigger 계열의 메서드를 사용해야 하며 다음과 같은 기능을 한다.</p>
+
+<ol>
+  <li>충돌한 상대방 게임 오브젝트가 플레이어인지 체크</li>
+  <li>상대방 게임 오브젝트가 플레이어이면 해당 게임 오브젝트의 PlayerController 컴포넌트의 Die() 메서드 실행</li>
+</ol>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>void OnTriggerEnter(Collider other){
+	//충돌한 상대방 오브젝트가 Player  태그를 가진 경우
+	if(other.tag == "Player"){
+	    //상대방 게임 오브젝트에서 PlayerController 컴포넌트 가져오기
+	    PlayerController playerController = other.GetComponent&lt;PlayerController&gt;();
+	
+	    //상대방으로부터 PlayerController 컴포넌트를 가져오는 데 성공했다면
+	    if(playerController != null){
+	        playerController.Die();
+	    }
+    }
+}
+</code></pre></div></div>
+
+<p>이리하여 완성된 탄알 오브젝트의 스크립트 코드는 다음과 같다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Bullet : MonoBehaviour
+{
+    public float speed = 8f; //탄알 이동 속력
+    private Rigidbody bulletRigidbody; //이동에 사용할 리지드바디 컴포넌트
+
+    void start(){
+        //게임 오브젝트에서 Rigidbody 컴포넌트를 찾아 bulletRigidbody에 할당
+        bulletRigidbody = GetComponent&lt;Rigidbody&gt;();
+        //탄알 리지드바디 컴포넌트의 속도 = 앞쪽방향 * 이동 속력으로 벡터값으로 설정
+        bulletRigidbody.velocity = transform.forward * speed;
+
+        //3초 뒤 자신의 게임 오브젝트 파괴
+        Destroy(gameObject, 3f);
+    }
+
+    void OnTriggerEnter(Collider other){
+        //충돌한 상대방 오브젝트가 Player  태그를 가진 경우
+        if(other.tag == "Player"){
+            //상대방 게임 오브젝트에서 PlayerController 컴포넌트 가져오기
+            PlayerController playerController = other.GetComponent&lt;PlayerController&gt;();
+
+            //상대방으로부터 PlayerController 컴포넌트를 가져오는 데 성공했다면
+            if(playerController != null){
+                playerController.Die();
+            }
+        }
+    }
+}
+</code></pre></div></div>
+
+<p>다 작성했으면 이제 Bullet 게임 오브젝트에 스크립트를 컴포넌트로 추가해야 한다.</p>
+
+<p align="center">
+<img width="600" alt="image" src="https://user-images.githubusercontent.com/68016394/154250020-c40e7af7-c7e9-4f55-929b-35e3ca20321c.png" />
+스크립트를 컴포넌트로 추가 및 프리팹에 적용
+</p>
+
+<p>드래그&amp;드랍으로 스크립트를 Hierarchy 창에 있는 Bullet 오브젝트에 넣었다면 위의 그림처럼 Overrides &gt; Apply All로 프리팹에 적용시켜주자.</p>
+
+<p>프리팹에 연동된 게임 오브젝트는 오브젝트의 변경사항을 위의 방법으로 프리팹 파일에 적용시킬 수 있다. 그 옆에 있는 Revert All을 하게 되면 모든 변경사항이 취소되고 다시 원래대로 돌아간다.</p>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time class="dt-published" datetime="2022-02-16T00:00:00+09:00">February 16, 2022</time></p>
+
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Unity+programming%287%29%20http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%287%29%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%287%29%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FUnity-Programming%287%29%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="/Unity-Programming(6)/" class="pagination--pager" title="Unity programming(6)
+">Previous</a>
+    
+    
+      <a href="/Unity-Programming(8)/" class="pagination--pager" title="Unity programming(8)
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h2 class="page__related-title">You may also enjoy</h2>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Unity-Programming(12)/" rel="permalink">Unity programming(12)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          6 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">벡터
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Unity-Programming(11)/" rel="permalink">Unity programming(11)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">9장, 10장을 들어가기 전…
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Unity-Programming(10)/" rel="permalink">Unity programming(10)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          5 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">탄막 슈팅 게임’닷지’ - 최종 완성
+</p>
+  </article>
+</div>
+
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/Unity-Programming(9)/" rel="permalink">Unity programming(9)
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          4 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">탄막 슈팅 게임’닷지’ - 최종 완성
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+
+    
+      <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Kim Namsub. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

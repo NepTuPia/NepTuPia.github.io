@@ -1,47 +1,49 @@
-# 벡터
+I"�?<h1 id="벡터">벡터</h1>
 
----
+<hr />
 
-앞의 글에서 말한 대로 이번에는 책으로는 9장의 내용이다. 유니티에서 벡터에 대한 기본적인 개념과 수학적 개념들, 그리고 쿼터니언에 대해 배워보자.
+<p>앞의 글에서 말한 대로 이번에는 책으로는 9장의 내용이다. 유니티에서 벡터에 대한 기본적인 개념과 수학적 개념들, 그리고 쿼터니언에 대해 배워보자.</p>
 
-**1. 벡터의 절대 위치와 상대 위치**
+<p><strong>1. 벡터의 절대 위치와 상대 위치</strong></p>
 
-벡터는 우리가 좌표상으로 인식하는 그 벡터를 의미한다. (0, 0)이라면 x, y좌표가 각각 0이라는 의미이다. 
+<p>벡터는 우리가 좌표상으로 인식하는 그 벡터를 의미한다. (0, 0)이라면 x, y좌표가 각각 0이라는 의미이다.</p>
 
-다만 (1, 1)이라는 벡터를 예로 들면 이 벡터는 2가지의 의미를 가진다.
+<p>다만 (1, 1)이라는 벡터를 예로 들면 이 벡터는 2가지의 의미를 가진다.</p>
 
-1. 상대적인 방향과 크기<br>벡터의 시작 좌표가 정해지지 않았을 때 그냥 (1, 1)의 벡터는 어디서부터 시작인지 알 수가 없다. 그저 방향과 크기만 벡터를 통해 알 수 있다.
-2. 절대적인 위치<br> 벡터의 시작 좌표가 원점등으로 정해져있거나 알 수 있는 경우 (1, 1)이라는 벡터는 좌표계 상에서 절대적인 위치와 방향, 크기를 모두 알 수 있다.
+<ol>
+  <li>상대적인 방향과 크기<br />벡터의 시작 좌표가 정해지지 않았을 때 그냥 (1, 1)의 벡터는 어디서부터 시작인지 알 수가 없다. 그저 방향과 크기만 벡터를 통해 알 수 있다.</li>
+  <li>절대적인 위치<br /> 벡터의 시작 좌표가 원점등으로 정해져있거나 알 수 있는 경우 (1, 1)이라는 벡터는 좌표계 상에서 절대적인 위치와 방향, 크기를 모두 알 수 있다.</li>
+</ol>
 
-**2. 벡터의 크기**
+<p><strong>2. 벡터의 크기</strong></p>
 
-우리가 아는 그 피타고라스 공식이다. (1, 1)의 벡터는 2제곱근의 크기를 지닌다. 
+<p>우리가 아는 그 피타고라스 공식이다. (1, 1)의 벡터는 2제곱근의 크기를 지닌다.</p>
 
-**3. 스칼라 곱**
+<p><strong>3. 스칼라 곱</strong></p>
 
-벡터에 스칼라, 즉 어떤 상수를 곱할 수 있다. (1, 1)의 벡터에 3을 곱하면 (3, 3)이 되고 그 크기도 정확히 3배가 된다. 
+<p>벡터에 스칼라, 즉 어떤 상수를 곱할 수 있다. (1, 1)의 벡터에 3을 곱하면 (3, 3)이 되고 그 크기도 정확히 3배가 된다.</p>
 
-**4. 방향 벡터**
+<p><strong>4. 방향 벡터</strong></p>
 
-공업수학에서 배운 그것, 크기가 1인 벡터이다. (3, -3)의 벡터가 있다면 벡터의 각 좌표를 크기로 나눠주면 크기가 1인 벡터로 만들 수 있다. 그리고 크기가 1인 벡터는 속력이 1이라고 표현할 수도 있다. 
+<p>공업수학에서 배운 그것, 크기가 1인 벡터이다. (3, -3)의 벡터가 있다면 벡터의 각 좌표를 크기로 나눠주면 크기가 1인 벡터로 만들 수 있다. 그리고 크기가 1인 벡터는 속력이 1이라고 표현할 수도 있다.</p>
 
-**5. 벡터의 덧셈**
+<p><strong>5. 벡터의 덧셈</strong></p>
 
-벡터의 덧셈은 같은 성분끼리 더해주면 된다. 좌표계상에서 살펴보면, A(1, 1) 벡터와 B(2, 3)벡터가 있다면 A + B = (1 + 2, 1 + 3) = (3, 4)이다. 이는 즉 A벡터만큼 이동한 후 B벡터만큼 이동한 후의 결과에 대한 값이다. 
+<p>벡터의 덧셈은 같은 성분끼리 더해주면 된다. 좌표계상에서 살펴보면, A(1, 1) 벡터와 B(2, 3)벡터가 있다면 A + B = (1 + 2, 1 + 3) = (3, 4)이다. 이는 즉 A벡터만큼 이동한 후 B벡터만큼 이동한 후의 결과에 대한 값이다.</p>
 
-**6.벡터의 뺄셈**
+<p><strong>6.벡터의 뺄셈</strong></p>
 
-벡터의 뺄셈은 같은 성분끼리 뻴셈으로 구하며 두 벡터 사이에 한 벡터가 다른 벡터에 도달하기 위한 '거리와 방향'이다. 
+<p>벡터의 뺄셈은 같은 성분끼리 뻴셈으로 구하며 두 벡터 사이에 한 벡터가 다른 벡터에 도달하기 위한 ‘거리와 방향’이다.</p>
 
-예를들어 A(3, 0)벡터와 B(10, 0)벡터가 있다고 가정해보자. B - A = (10 - 3, 0 - 0) = (7, 0)이다. 이는 A벡터와 B벡터 사이의 간격이 7만큼이고 A벡터에서 B벡터로 가기 위해선 (7, 0)만큼의 방향과 크기로 가야 한다는 것을 의미한다.
+<p>예를들어 A(3, 0)벡터와 B(10, 0)벡터가 있다고 가정해보자. B - A = (10 - 3, 0 - 0) = (7, 0)이다. 이는 A벡터와 B벡터 사이의 간격이 7만큼이고 A벡터에서 B벡터로 가기 위해선 (7, 0)만큼의 방향과 크기로 가야 한다는 것을 의미한다.</p>
 
-반대로 A - B = (3 - 10, 0 - 0) = (-7, 0)이다. 이는 B벡터에서 A벡터로 가기 위해선 (-7, 0)만큼의 방향과 크기로 가야 한다는 것을 의미한다. 
+<p>반대로 A - B = (3 - 10, 0 - 0) = (-7, 0)이다. 이는 B벡터에서 A벡터로 가기 위해선 (-7, 0)만큼의 방향과 크기로 가야 한다는 것을 의미한다.</p>
 
-**7. 벡터의 내적**
+<p><strong>7. 벡터의 내적</strong></p>
 
-벡터의 내적은 한 벡터에서 다른 벡터로의 '투영'이다.
+<p>벡터의 내적은 한 벡터에서 다른 벡터로의 ‘투영’이다.</p>
 
-![vector product](https://wikidocs.net/images/page/22384/inner_product.png)
+<p align="center">![vector product](https://wikidocs.net/images/page/22384/inner_product.png)
 
 위의 그림을 보면 이해하기 쉬울 것이다.
 
@@ -59,7 +61,7 @@
 
 벡터의 내적은 연산 결과가 숫자이지만, 외적의 결과는 또다른 '벡터'이다. 연산식은 X를 쓰며 두 벡터 A와 B에 대해 외적 벡터 C는 A X B = C로 나타낸다. 
 
-![vector cross](data:image/png;base64,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)
+<p align="center">![vector cross](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPUAAADNCAMAAABXRsaXAAABgFBMVEX//////7gAAAD//7T//8rY2NjY2Nz/Dw//Gxv/19f///D//7n7+/snJyfc3NzT09P/MzP//9GMjIx5eXlhYWE/Pz9LS0u4uLiioqL//77y8vLp6en//9WoqKjw8PDFxcWZmZnr6//IyMj/7+//JyeGhoYyMjJUVFQSEhJHR0fPz/9RUf/09P8UFBT/JCT/pKRra2uwsLBxcf99ff//3t7/zMz/5+ceHh6xsf/Cwv9ycnLX1///9MT/kpL/UVEvLy+Xl//Hx/+iov9dXf/k5P+Fhf//wbf/eHn/YWL/vLz/8cz/nJz//+X/ior/x4//PUT/rrL/bGzTPIfPs+ZkZ/+4R56ynetBQf+6uv9tbf+Pj//jt7eYmPLIyNxoCwshIVU1NYhJKyvACAiSknJPTznn6KcvLyKkpHazs5jNzaX/z7jk5LR5eWr/48SNjXhwcH1fX1YKChqkpNm7u5b/sqV9fWD/f4UsLCA8PCbi477/5bP/mnH/uI7/iWv/bVP/y6SwVhTVAAANDElEQVR4nO2diXfayB3HxyOoYzMIzCWEwCjc2MHGCYcv7GTtxPggjtttu7u9tt3Nprvb9NrddJs0yb/eGWHQgQQSaEB+0vc9CwmDNB80v2NGIw0AtJXPUz+EA9XcXnQJFqFOFy26CAtQuNBYdBHmr5V7Wy6s4p1C+GjRZZi78kfhcNh1VXzlXjjsvireK4TDhe6iSzFnIVLBw/dclqg0C4TabVW8J1EXbtyVqIT7KrQWXZB5inhw91Xxzr0C8eGFLTclKmi70+kUCmd46TIvDpbvuS41A4R6ZdFFWIDGUnNZs7thk3YUZm4aS41iIbP7EUUbCjM3ja/hKMaZ3ZEYsaE089IItcAqJBQrkXWjr6aUn2Q5WPfTLqxtGqEuQqUqbVgWDL6aU30StmE7R724NmmEmg0p5I9AMWX0VUH5yVAW1lnahbVNk+zatBe/U+5svA/fN11nM6INhZmbxsdr0x6cFW0oy/w0c24mhHLcnWufz0wdSsKiPUWZo2bPw0PQtB04RrNTi9AwtjlWpqlDcjRWnVsUS9haoLnImDqFAJLdFKomBjlapKJMPYWgCJQfvBMyos4VMyJXUpxV/3GpX5MjajvOwpywXytl6BWRggyoxTJGjNWUKThbipNNDTSIBv1FNlWGppM4J0ifOlMjLa2y2mLZIK7kEbij/mg1lsTVm4N3qltBl9pfIRU2daxpMoeCCRFqqjLbltpknPbHcLZ0qRNx4p1CUJuFs0EtNMYVyUuxYrrXxQnSo/b3s63osbZlHWnHta3t/aD0xnH5TnlxPeodyTWxxzENSQRm2GBV3bdSq5Mld7ecmS51EeKMBInYrFX9BJIjY0slJbZf8mJC7S51mgF9ahGfufVkDnJZpWHfhiy2VFVU8iSx/fVYlHYxbZauXbdLxagQgqoO0sjAkUkBbKAduJPK1e+U/ybS9eEs6f5Pcar6HR16b39sXfnRneydcmSSvCs+7pFH7R551O6RR+0eedTukUftHnnU7pFH7R551O6RR+0eedTukUftHnnU7pFH7R551O6RR+0eedTukUftHnnU7pFH7R551O6RR+0eedTukUftHnnU7pFH7R551O6RR+0eLS+7jxqB5V/+auMUrx1sbBzIL6cHM++adexjv/YeP1j+9GTzMV59uLn5FL883dx8hF8ebz6Ydd/CsejMOxn3Nj89Xf71b3Y38Ppnu7tP8MuT3d09/PLJ5v2Z987CfSc+8Oz+ycP7Bnb9yW+tUoeO4xol4hWovW/dCTp4YOTDH1iu4GwxolGxEowYPfxvURpw0YtcYtBxD5g4ffi0v0KNOlt23EOhDj49+ay/pk99ejCzD3eiRX/+5HZNn9q6Nxsq5bhTLGsIZUA9beTyi3GHPk5jV1l77T7XOeg0vy3pwePNXcWmQeS6P61ZRhz5kBz0xeYXk8/19LtPiHbuzjYdfKLatJmahWxov+zQDFyWQQ0/nbLcyeNsZj3Tfw6WU/Tk8QiMPvXutD48FscNTHRcn+7bVLR3cnKqfc/eyMXW9qWlONW36ejhKLTNkSvZJo3LSNBJ0WtjY9RaDTLSJ9NlpOUyIB7N8Q+jtdWHCxURL+LOfwSWvdSx/WxStNyDQjfO3dcxVqPcbLojIEEwnDzBWGKCo+gInj4ahTGIXCez95uZVwTCSj1D64w/emia2obeQvOK9CeRiO1QOeOPPteh3vod69eK/f3JH0bepCY2Opxno8zZ3626MRqPQvfCf4Sj+tOXOm/ORbV6hvrMcJlFwRnrz3+5psuM6hAGuV8sXMMaDmPJ9VbP5inSNL3cQhnC6ve+hWvtK4m48vWrl2tN+z25OnKFghDu+wJLCxdPqL959ZIP+HoUrrCqIlcSH+qv/KKJifiv8Fnm+UDgCmxTmA5PEblS2JZK3zoCeikQCPCBJYb/rmk/Mtbe3sCwhQSE5e+dAU2wl5YY37MC5Wk9c7h2/80JJi0rDVbonOqhsEn/yxkmPRD/+pJaw+s2cuEo3XaISffF8K+vz6hRS5FLqEKY8DkK2gcAxdpNIhdXgfDvvJNMmjk8o2rRmJpE6R+cdKKXAlc3Xartjb3P/uE8k14FDbpzEwvfQPhPPsDYqtmgfZ3eLERocj9EFhKTtr3xMAt1+vx6JptOTZzbVZSiNLM6y1F0tDr92eavAJrRpEPj5w9CMQi//LdvyTnUDP/s2iqzajpbaUpbEcaMh276S9ikSQ7qGGpmLX99bvFYKNYOalRqw4rRvDJcbRClnUIduEDAuu/mkhplYrBsNKxNlKK0lJo4gxrnoOEXdhxdMLxUvl6GMD5oVjqCmvGt9i7tODiqGzmzUBw3K18OclBHUB+2bLq2hYxqdz9KDxNvJ1BfdG8oD1yJ4CitTLyNqaOTLztwOjMpWqbmV5v0mpWSUpJJK1tYxtQpE9jJ0UvTVql9z2gPUJKitLpZqaVGQ4GsUQyQP4LKSW2ZrVEzh70tuo0N6XrOV5q2tJa6roj7NRjROw8clD/ShlVNwm+N+gp16F7GQlFs0iPNSi11lhsqWYvqXnJn5Y9wiao2/7NAjXNQ2zr5yXy2Om8LMUWUNqZWaEeceCyhPtK0M0/NrP1YsJqDGpVDzCRz+6PnyH88YtITqDlx8sF0DmSeOg2aNkHnSgJApf2R93ek6zk63WMD6uxIw9TEcCn/8EwjbpDym6TGOagt2ZhUjGNsZqmR2VqJSQf1e4oG1NGqpQMJmZioOkJs8Eubo2b4lfBMvSbKYyfIgM2Rgeipsq5Jq6mtzdWNWPVPi4aTSZqj9oG8TbWb1GMSYYsJtTcLVXDibdT5OyU1yFVUOYxF6oszG+NVPZEisxKLqjf1orQ1av/AZ4Xkn1NMqO5isUQduOp2bUxN4jFcncV2dl1RxbFJV8Z0/hpQ4/AnU9Xr/fVsW07WykXVNO5WqPlVsGJnFlouCYKYg355hBq5RFt9OabHW5d6PZLhInF5J0FpfHeoIjdeUzCbK8Po8JcxT82sdWxz3n2FytUiYONyHin3FFmhZss5nGEr7kgS4vXBxL+3ysHsDm60DqObeeqrzpHdoy6kW8bkzIGY9KvA2ItYOtSoKuKdxJXx2h+M+FUznYsJjtSBYUvTJDXDX4E85dZGcbxJG1FnSpJPVIU/thIsKrf3g+TN2rA30hw14/vxiDKzMNqsNEWNSiJeJkuqnaXilaRq3yRac/IYf3PU6cZslzYmK0ui9PjarU8tkKCfSqimsBaqUa6m6DgJ1Ui0VtyMaIaan6rz15JI5+8rE9elR6ml1C4T30nJ/iEVKyPcrJazsSRx8JxinvvJ1Az/He0TTcZGtk2NKRqlZmEOJHNxTq7RqCxle5zssqs4McgpoCdTMz7QpTymiK1C+PVLUwMQdOw6WqrnhPi+nEhEE/3TnoH+23fEWHZHVCZnk6gDF9RH/mbb43LQSdS4ZYF5BEX2lB2cVE5OXPzqFs4E6sDrozMapAol5es5U1FPo7HUDL96/oZy528MwpL5YYJzoGZ8lL0YNuk4jtLjEm8jamu9ClqNo07f0E5NSJT+aXKUHqXOzPYgACQOXL6WOnCVt7MxrSdyT5C1gVSUr3MxvmeUz7Nk0t+YC1hysa5W7dWVkppZ2y5QNuq+SVsdJmjvuCvN0Ksr8ILy49I40lNkxaRpC+egtow/GKf+JVonQfuay5Rz0HWceP/sqLGRS2s2dv7qizXVlp6nAhdvaDtvbmzn7wKEc1CK49r7KuJmpbOGO/NUx7UToTKExxZyUPpi1nqULVq65e4nJ9XupaXVN0eUc9BMZWLn75zFr9Lu/EXktvRvnXSmGd+PN9Rw16XhINLYSGeZdLpZoJeD1klHZqhtsVlJXfxrms/9yEJYTe04L/F+FqZwE+1AqIaB49L1HCdB+9ARzcT79hb8rx1l0vwFXc+du33qwCtHQX93ZPN1abVS8VvqmuUuBHriwXaPauItP2LCancRPa3R7vzNDaH/85NTqC+6R5RbWCV4+2CNH146w4PjZmWLdmNalJh/Jg/WmKWnj3QTLkkLvBvyxwSklf7idovnl5gAHyArAbyCt3ieH24xDC/9b4165y8IkUgd+W86vWYo8j/p//0VeaHcOjwkf3jx9i1ewYv02+dv04fPnx/ilefp9HOy9e7dYfrju/+lD99/+Jj++OH9Yfp9+H364iiMt8If1tIflt+lD5eXbR9eoxWKt2O5dSC1avL9BQJosIXIVqvZRKDZbIDW9mUeNC9xU7d3tgJaZ28Q2O72QP6m2wTNo5s86OBY0+peN8A56fi4ud4GrevrFnhxfQbw1jn+31kevLi5BPnt3gpo9PDuXnTOATo/z4PWOd5vi9w03KB85zBWjlu/OWqClaNrBHpbbwAqFJrgfOsagLPlHmhsLa+AF2EM1A1vg8ZNt19ocNlpgHznEoGV8yZAzfMWyDdXEGjgnwY1GgjkG63+70d9gNBU+j/FgJCmUPvtvQAAAABJRU5ErkJggg==)
 
 두 벡터를 모두 수직으로 통과하는 벡터를 공간상에서 생각해보자. 서로의 기저벡터가 1이나 -1의 곱으로 같아질 수 없는 벡터(즉, 일직선상에 존재하는 벡터)가 아닌 두 벡터는 한 평면(Plane)을 결정할 수 있다. 즉 두 벡터의 외적의 결과 벡터는 한 평면에 대해 수직인 벡터이다. 
 
@@ -246,3 +248,5 @@ Quaternion rotation = a * b;
 
 짐벌락과 쿼터니언의 이론에 대해선 기회가 되거나 필요가 느껴지면 공부해서 올려보겠다...!
 
+</p></p>
+:ET
