@@ -18,24 +18,22 @@
 
 큐브 오브젝트를 만들고 상단 메뉴바에서 다음과 같이 생긴 버튼을 찾자.
 
-<p align="center">
 ![image](https://user-images.githubusercontent.com/68016394/159629225-0e69ecdd-beab-47f8-ae49-419adbc32773.png)
 
 위의 버튼에서 Global로 되어 있다면 현재 전역공간에 대해 오브젝트를 다루는 상태이다. 이 상태에서 오브젝트를 평행이동해보자. 
 
-<p align="center">
 ![image](https://user-images.githubusercontent.com/68016394/159629363-d18b9390-9324-4263-88be-6786db9f39c5.png)
 
 위의 그림에서 보이는 좌표계는 게임월드 전체에 대한 좌표축이다. X축으로 평행이동을 한다면 게임월드의 X축 방향으로 이동하게 되는 것이다.
 
 ## 오브젝트 공간
 
-<p align="center">
+
 ![image](https://user-images.githubusercontent.com/68016394/159629098-62f405f0-5423-4613-a20b-f007a70ab641.png)
 
 위의 Global 버튼을 눌러 Local로 바꿔보자. 이제 오브젝트를 보게되면 오브젝트 공간에 대해 다룰 수 있게 되었다. 근데 왜 Local인지는 뒤에서 추후 설명하겠다. 
 
-<p align="center">
+
 ![image](https://user-images.githubusercontent.com/68016394/159629672-755f3c3d-ff3f-42ab-952a-4b2403dd4eb2.png)
 
 아까와는 x,y,z축의 좌표계 방향이 달라졌다. 이제는 오브젝트 자기 자신에 대해 다룰 수 있는 상태이다. 이 상태에서 X축으로 평행이동을 한다면 오브젝트의 X방향에 대해 이동하게 되는 것이다. 
@@ -48,11 +46,11 @@
 
 Sphere 오브젝트를 만들어 아까 만들어둔 큐브 오브젝트의 자식 오브젝트로 만들어보자. 그렇다면 Inspector창에서 표시되는 Position의 좌표값이 변하는 것을 확인할 수 있다.
 
-<p align="center">
+
 ![image](https://user-images.githubusercontent.com/68016394/159631957-404ac12c-c420-4e84-802b-e07b93c63b48.png)
 생성 당시의 좌표값
 
-<p align="center">
+
 ![image](https://user-images.githubusercontent.com/68016394/159632070-05b4cd47-fe37-427b-8779-fd2ed4055c0a.png)
 자식 오브젝트 상태에서의 좌표값
 
