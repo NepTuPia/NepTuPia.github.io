@@ -48,10 +48,14 @@ Sphere 오브젝트를 만들어 아까 만들어둔 큐브 오브젝트의 자�
 
 
 ![image](https://user-images.githubusercontent.com/68016394/159631957-404ac12c-c420-4e84-802b-e07b93c63b48.png)
+
+<p align='center'>
 생성 당시의 좌표값
 
 
 ![image](https://user-images.githubusercontent.com/68016394/159632070-05b4cd47-fe37-427b-8779-fd2ed4055c0a.png)
+
+<p align='center'>
 자식 오브젝트 상태에서의 좌표값
 
 여기서 한가지 중요한 점을 알 수 있다.

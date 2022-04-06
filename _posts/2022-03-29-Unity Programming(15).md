@@ -14,7 +14,7 @@
  
  Jump.anim으로 확장자를 'anim'으로 주어 애니메이션 파일을 만들고, 아까 잘라둔 tokojump 스프라이트 파일들을 드래그&드랍으로 애니메이션 타임라인에 넣어주자. 그리고 샘플레이트를 13으로 조정해주어 적절한 속도로 애니메이션이 재생되게 해주자. 샘플레이트가 보이지 않는다면 애니메이션 창의 타임라인 창 우측 상단에 있는 가로 점 3개를 눌러 'Show sample Rate'를 누르면 샘플 레이트를 설정할 수 있다. 
  
- ![image](https://user-images.githubusercontent.com/68016394/160514922-89b17fc7-dd32-4556-a3b7-1bad0be18740.png)
+![image](https://user-images.githubusercontent.com/68016394/160514922-89b17fc7-dd32-4556-a3b7-1bad0be18740.png)
  
  같은 방법으로 다른 모션들도 애니메이션을 만들어주자. 다만 Die 애니메이션의 경우 하나 더 설정을 만져줘야 한다. 다른 애니메이션은 계속해서 반복되는 애니메이션이지만 사망시에는 딱 한번만 애니메이션이 실행되어야 한다. 그러므로 Die 애니메이션 클립파일을 클릭해 Inspector창에서 'Loop Time' 박스를 체크 해제해서 한번만 애니메이션이 실행되도록 만들자. 
  
@@ -34,13 +34,14 @@
  
  새로운 애니메이터 컨트롤러는 상단 메뉴에서 Assets > Animator Controller로 생성할 수 있다. 하지만 아까 애니메이션 클립을 만들면서 'Player'라는 에셋이 생성된 것을 봤을 것이다. 기본적으로 애니메이터 컨트롤러는 오브젝트의 애니메이션을 제작하면 자동으로 생성된다. 
  
- ![image](https://user-images.githubusercontent.com/68016394/160519694-b772aa7a-c07f-485f-b0d8-cb9ee98bd49a.png)
+![image](https://user-images.githubusercontent.com/68016394/160519694-b772aa7a-c07f-485f-b0d8-cb9ee98bd49a.png)
+
  <p align = 'center'>
  Player라는 이름의 에셋이 애니메이터 컨트롤러다.
  
  Player 애니메이터 컨트롤러를 클릭하면 상태도를 볼 수 있다. 
  
- ![image](https://user-images.githubusercontent.com/68016394/160519888-3c020832-2a72-4ca3-9639-20406188947c.png)
+![image](https://user-images.githubusercontent.com/68016394/160519888-3c020832-2a72-4ca3-9639-20406188947c.png)
  
  네모난 박스는 상태들을 나타내고 화살표는 전이를 표현한다. 아까 만들어둔 Run, Jump, Die 애니메이션이 상태로 들어가 있고 그 외에 Entry, Exit, Any State 3가지의 상태가 더 있는것을 볼 수 있다. 
  
@@ -58,9 +59,9 @@
  
 위의 내용을 참고해 이제 위의 그림처럼 상태도를 구성해보자.
 
-# 애니메이터 전이 구성하기
+#애니메이터 전이 구성하기
 
-**!. 전이 화살표 배치**
+**1. 전이 화살표 배치**
 
 상태 박스를 우클릭해 'Make Transition'을 누르면 화살표를 연결해 전이를 표현할 수 있다. 시작할 기본 애니메이션 상태는 Run이므로 Entry와 Run을 연결하자.
 
