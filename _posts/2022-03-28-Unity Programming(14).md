@@ -1,10 +1,10 @@
-#2D 러너 게임 '유니런' 제작 - 플레이어 제작(1)
+# 2D 러너 게임 '유니런' 제작 - 플레이어 제작(1)
 
 출판사에서 제공하는 프로젝트 파일을 열어서 시작해보자. 11번째 폴더안에 있는 'Uni-run' 파일을 Unity hub에 불러와서 열면 된다. 
 
 해당 파일안에는 유니런 게임 제작에 필요한 여러 소스들이 들어가있다. 이 소스들을 활용해 스타일리시 스프린트같은 2D 러너 게임인 유니런을 만들어보자!
 
-##시작지점 만들기 
+## 시작지점 만들기 
 
 우선 플레이어가 게임을 시작할 시작점과 게임이 끝나는 데드존을 만들어 배치하자.
 
@@ -36,10 +36,13 @@ Empty 오브젝트를 추가하고 시작지점처럼 Box Collider 2D 컴포넌�
 제공받은 스프라이트는 싱글 스프라이트로, 하나의 스프라이트에 여러 이미지 파일이 일렬로 담겨있으니 멀티플 스프라이트로 설정해 나누어 캐릭터 애니매이션을 만들어보자!
 
 ![image](https://user-images.githubusercontent.com/68016394/160433505-37b0baa2-3b75-418d-b60a-23c8830133e3.png)
+  
+<p align = "center">
 
 스프라이트 파일을 선택하고 Inspector 창을 보면 스프라이트 모드를 설정할 수 있다. Single로 되어있던 것을 Multiple로 설정하자. 그리고 Sprite Editor을 클릭하면 이제 개발자 임의대로 스프라이트를 편집할 수 있다. 
 
 ![image](https://user-images.githubusercontent.com/68016394/160433899-99770e33-0d75-4d5e-b2c8-78f7dfb5dd72.png)
+<p align = "center">
 
 에디터창에서 위의 그림대로 창을 연 뒤, Type을 'Grid by Cell Size'로 선택하면 일정한 간격으로 스프라이트를 자를 수 있다. 알맞게 설정한 뒤 Slice버튼을 누르면 아래처럼 하나의 스프라이트가 여러개의 개별 스프라이트로 잘라졌다. 다 잘랐다면 Apply 버튼을 눌러 저장한 뒤 창을 닫자. 
 
@@ -62,6 +65,7 @@ TokoRun 스프라이트 파일을 잘라 만든 TokoRun(0)을 기본 캐릭터 �
 ![image](https://user-images.githubusercontent.com/68016394/160436275-9d6f1a83-b84e-4706-966c-64ab2852b4ef.png)
 
 <p align="Center">
+  
 캐릭터 스프라이트를 오브젝트로 배치
 
 캐릭터는 중력의 영향을 받아야하므로 Rigidbody 2D 컴포넌트를 추가해주자. 발판과의 충돌은 항상 감지해야 하므로 'Collision Detection'을 'Continous'로 변경해주고, 'Constraints' 드랍다운 메뉴를 펼쳐 'Freeze Rotation'의 Z축을 체크해 Z축을 고정해주자. 
@@ -71,6 +75,7 @@ TokoRun 스프라이트 파일을 잘라 만든 TokoRun(0)을 기본 캐릭터 �
 ![image](https://user-images.githubusercontent.com/68016394/160437482-4e73d0c0-bd86-422e-85d2-5ee49e87505a.png)
 
 <p align="Center">
+  
 리지드바디 및 콜라이더 컴포넌트 설정 완료
 
 마지막으로 캐릭터가 소리를 낼 수 있도록 만들자. 캐릭터 오브젝트의 컴포넌트로 'Audio Source' 컴포넌트를 추가하고, 'AudioClip' 필드 옆의 선택창에서 jump 오디오 클립 파일을 선택해 넣어주자. 오디오 클립 파일은 제공받은 에셋에 있을 것이다. 오디오 소스 컴포넌트는 소리를 재생하는 역할을 하는 'CD 플레이어'의 역할을 한다. 실제로 소리를 재생하려면 CD 플레이어 안에 CD를 넣어야하듯이 컴포넌트 안에 실제 오디오 클립을 넣어줘야 한다.  
@@ -80,6 +85,7 @@ TokoRun 스프라이트 파일을 잘라 만든 TokoRun(0)을 기본 캐릭터 �
 ![image](https://user-images.githubusercontent.com/68016394/160438367-ab6fc3e1-9fb3-49d4-bd69-a95b889a4341.png)
 
 <p align="Center">
+
 오디오 소스 컴포넌트 설정 완료
 
 **오디오 리스너(Audio Listner)**
